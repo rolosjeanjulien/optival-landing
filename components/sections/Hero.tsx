@@ -60,12 +60,12 @@ export function Hero() {
             </motion.div>
 
             {/* H1 — Syne, révélation mot par mot */}
-            <h1 className="font-display font-bold leading-[0.95] text-white"
+            <h1 className="font-display font-bold leading-[1.05] text-white"
                 style={{ fontSize: 'clamp(3rem, 8vw, 6.5rem)' }}>
               {words.map((word, i) => (
                 <span
                   key={i}
-                  className="inline-block overflow-hidden mr-[0.2em] mb-[0.05em]"
+                  className="inline-block overflow-hidden mr-[0.2em] pb-[0.18em] mb-[-0.18em]"
                 >
                   <span
                     ref={(el) => { wordRefs.current[i] = el }}
