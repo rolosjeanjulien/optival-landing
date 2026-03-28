@@ -6,7 +6,7 @@ import { gsap } from '@/lib/gsap'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { CheckCircle } from 'lucide-react'
 
-const words = ['Votre', 'PME', 'mérite', 'une', 'IA', 'qui', 'fait', 'vraiment', 'le', 'travail.']
+const words = ['Vous', 'gérez', 'votre', 'métier.', 'On', 'gère', 'le', 'reste.']
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -55,7 +55,7 @@ export function Hero() {
             >
               <div className="w-6 h-px bg-accent" />
               <span className="font-mono text-xs text-white/40 tracking-[0.2em] uppercase">
-                L'agence IA qui construit de vrais produits
+                Automatisation · Sites web · Avis Google
               </span>
             </motion.div>
 
@@ -85,8 +85,8 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 1.1 }}
               className="text-white/50 text-lg leading-relaxed max-w-lg"
             >
-              Nous automatisons vos processus, construisons votre présence digitale
-              et gérons vos avis Google. Et on l'a prouvé en construisant nos propres outils.
+              Répondre aux avis Google, envoyer des relances, tenir votre site à jour...
+              Ce sont des heures perdues chaque semaine. On les récupère pour vous.
             </motion.p>
 
             {/* CTAs */}
@@ -96,12 +96,12 @@ export function Hero() {
               transition={{ duration: 0.4, delay: 1.3 }}
               className="flex flex-col sm:flex-row gap-3 pt-2"
             >
-              <a href="#services" className="btn-primary btn-lg group">
-                Découvrir nos services
+              <a href="#process" className="btn-primary btn-lg group">
+                Voir comment ça marche
                 <span className="btn-arrow">→</span>
               </a>
-              <a href="#autoreply" className="btn-ghost btn-lg group">
-                Voir Autoreply
+              <a href="#contact" className="btn-ghost btn-lg group">
+                Réserver un appel gratuit
                 <span className="btn-arrow">↓</span>
               </a>
             </motion.div>
@@ -114,9 +114,9 @@ export function Hero() {
               className="flex flex-wrap gap-x-6 gap-y-2 pt-2 border-t border-white/10"
             >
               {[
-                'Résultats en < 72h',
-                'Pas de jargon',
-                '1 seul interlocuteur',
+                'Opérationnel en 3 jours',
+                'Pas de jargon technique',
+                '1 interlocuteur dédié',
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2 text-sm text-white/40">
                   <CheckCircle size={13} className="text-accent shrink-0" />

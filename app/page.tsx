@@ -3,6 +3,7 @@ import { Footer } from '@/components/layout/Footer'
 import { Hero } from '@/components/sections/Hero'
 import { Problem } from '@/components/sections/Problem'
 import { Services } from '@/components/sections/Services'
+import { Process } from '@/components/sections/Process'
 import { AutoreplyDemo } from '@/components/sections/AutoreplyDemo'
 import { Expertise } from '@/components/sections/Expertise'
 import { SocialProof } from '@/components/sections/SocialProof'
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <Problem />
         <Services />
+        <Process />
         <AutoreplyDemo />
         <Expertise />
         <SocialProof />

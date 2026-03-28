@@ -85,7 +85,7 @@ export function AutoreplyDemo() {
               Autoreply — Notre produit SaaS
             </span>
           </div>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white" style={{ lineHeight: 1.1 }}>
+          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
             Vos avis Google répondus<br className="hidden sm:block" />
             automatiquement.
           </h2>

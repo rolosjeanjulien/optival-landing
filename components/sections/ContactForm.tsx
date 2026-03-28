@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Loader2, CheckCircle2, Lock } from 'lucide-react'
+import { Loader2, CheckCircle2, Lock, CalendarDays } from 'lucide-react'
 import { contactFormSchema, type ContactFormData } from '@/lib/validations'
 
 const needOptions = [
@@ -60,14 +60,33 @@ export function ContactForm() {
                 Contact
               </span>
             </div>
-            <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white" style={{ lineHeight: 1.1 }}>
-              Prêt à récupérer<br />du temps<br />
-              <span className="text-white/30">cette semaine ?</span>
+            <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
+              Parlons de
+              <br />votre situation.
             </h2>
             <p className="text-white/40 text-lg max-w-sm">
-              Décrivez votre situation en 2 minutes. On revient avec une proposition concrète sous 24h.
+              Un appel de 30 min suffit. On vous dit ce qu'on peut faire et ce que ça vous coûte. Sans engagement.
             </p>
-            <div className="pt-4 border-t border-white/8">
+
+            {/* Calendly — point d'entrée principal */}
+            <a
+              href="https://calendly.com/optival/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-accent text-white font-semibold px-6 py-4 rounded-button hover:bg-accent/90 transition-colors group self-start"
+            >
+              <CalendarDays size={18} />
+              Réserver mon appel gratuit de 30 min
+              <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+
+            <div className="flex items-center gap-3">
+              <div className="flex-1 h-px bg-white/10" />
+              <span className="text-white/25 text-xs font-mono">ou envoyez un message</span>
+              <div className="flex-1 h-px bg-white/10" />
+            </div>
+
+            <div className="pt-0 border-t border-white/8">
               <a href="mailto:contact@optival.fr" className="text-white/40 text-sm font-mono hover:text-white/70 transition-colors">
                 contact@optival.fr
               </a>

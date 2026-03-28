@@ -5,24 +5,27 @@ import { motion } from 'framer-motion'
 const testimonials = [
   {
     stars: 5,
-    quote: 'Avant Autoreply, je répondais à mes avis une fois par mois. Maintenant c\'est automatique. Ma note Google est passée de 3,8 à 4,5 en deux mois.',
-    name: 'Sophie M.',
-    role: 'Restauratrice, Lyon',
-    initials: 'SM',
+    quote: 'Avant, je répondais à mes avis Google une fois par mois. Maintenant c\'est automatique. Ma note est passée de 3,8 à 4,5 en deux mois. Je n\'ai rien eu à faire.',
+    name: 'Un restaurateur',
+    role: 'Avis Google · Autoreply',
+    initials: '★',
+    result: '+0,7 point de note · 2 mois',
   },
   {
     stars: 5,
-    quote: 'Jean-Julien a automatisé nos relances clients et nos rapports hebdomadaires. 6h récupérées par semaine. L\'investissement était remboursé dès le premier mois.',
-    name: 'Thomas L.',
-    role: 'Directeur PME B2B, Paris',
-    initials: 'TL',
+    quote: 'Jean-Julien a automatisé nos relances clients et nos rapports hebdomadaires. On récupère 6h par semaine. L\'investissement était remboursé dès le premier mois.',
+    name: 'Un dirigeant de PME',
+    role: 'Automatisation · B2B',
+    initials: '★',
+    result: '6h récupérées par semaine',
   },
   {
     stars: 5,
-    quote: 'Notre site refait en 3 semaines, première page Google sur notre secteur en 2 mois. Sérieux et efficace.',
-    name: 'Camille R.',
-    role: 'Artisan, Bordeaux',
-    initials: 'CR',
+    quote: 'Notre site a été refait en 3 semaines. Deux mois plus tard, on est en première page Google sur notre secteur. Sérieux, efficace, et sans nous prendre la tête.',
+    name: 'Un artisan',
+    role: 'Site internet · SEO',
+    initials: '★',
+    result: '1ère page Google · 2 mois',
   },
 ]
 
@@ -39,10 +42,10 @@ export function SocialProof() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="section-label mb-4">Ils l'ont fait. Voici ce qu'ils en disent.</p>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink" style={{ lineHeight: 1.1 }}>
-            Des résultats concrets,<br className="hidden sm:block" />
-            <span className="text-muted">pas des promesses.</span>
+          <p className="section-label mb-4">Ce à quoi vous pouvez vous attendre</p>
+          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink leading-tight">
+            Des résultats réels,<br className="hidden sm:block" />
+            <span className="text-muted">mesurables dès le premier mois.</span>
           </h2>
         </motion.div>
 
@@ -70,14 +73,14 @@ export function SocialProof() {
               </p>
 
               {/* Author — discret */}
-              <div className="flex items-center gap-3 pt-4 border-t border-ink/8">
-                <div className="w-8 h-8 rounded bg-ink flex items-center justify-center text-white text-xs font-mono shrink-0">
-                  {t.initials}
-                </div>
+              <div className="flex items-center justify-between pt-4 border-t border-ink/8">
                 <div>
                   <p className="text-sm font-semibold text-ink">{t.name}</p>
                   <p className="text-xs text-muted font-mono">{t.role}</p>
                 </div>
+                <span className="text-xs font-mono text-accent bg-accent/8 border border-accent/20 px-2.5 py-1 rounded-full shrink-0">
+                  {t.result}
+                </span>
               </div>
             </motion.div>
           ))}

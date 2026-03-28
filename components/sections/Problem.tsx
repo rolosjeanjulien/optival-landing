@@ -36,7 +36,7 @@ export function Problem() {
           <p className="section-label mb-4">Ce qu'on entend chaque semaine</p>
           <div className="flex items-start gap-6 max-w-3xl">
             <div className="craft-rule mt-3 shrink-0" />
-            <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink" style={{ lineHeight: 1.1 }}>
+            <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink leading-tight">
               Gérer une PME, c'est déjà<br className="hidden sm:block" /> un métier à plein temps.
             </h2>
           </div>
@@ -63,7 +63,7 @@ export function Problem() {
               </span>
 
               {/* Quote */}
-              <p className="font-display text-xl sm:text-2xl lg:text-3xl text-ink font-medium flex-1" style={{ lineHeight: 1.6, paddingBottom: '6px' }}>
+              <p className="font-display text-xl sm:text-2xl lg:text-3xl text-ink font-medium leading-snug flex-1">
                 {item.quote}
               </p>
 
