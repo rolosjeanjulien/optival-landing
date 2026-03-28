@@ -111,7 +111,7 @@ export function ContactForm() {
                 >
                   <CheckCircle2 size={40} className="text-[#16A34A]" />
                   <h3 className="font-display text-white text-2xl font-bold">Message bien reçu !</h3>
-                  <p className="text-white/40">Jean-Julien revient vers vous sous 24h.</p>
+                  <p className="text-white/40">Nous reviendrons vers vous sous 24h.</p>
                   <p className="text-white/25 text-sm font-mono">contact@optival.fr</p>
                 </motion.div>
               ) : (

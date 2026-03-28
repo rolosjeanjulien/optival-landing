@@ -14,15 +14,15 @@ const benefits = [
   },
   {
     title: 'Des réponses qui vous ressemblent',
-    desc: "L'IA s'adapte à votre ton, votre secteur, vos spécificités. Pas de copié-collé.",
+    desc: "La réponse s'adapte à votre ton, votre secteur, vos spécificités. Jamais de copié-collé.",
   },
   {
     title: 'Vous gardez toujours la main',
-    desc: '3 modes : Full Auto / Semi-Auto / Manuel. Vous choisissez votre niveau de confiance.',
+    desc: '3 modes : 100% Automatisé / Approbation des réponses complexes / 100% Manuel. Vous choisissez votre niveau de confiance.',
   },
   {
     title: 'Impact mesurable rapidement',
-    desc: '+0,5 point de note Google en moyenne en 60 jours. 2 à 4h récupérées par mois.',
+    desc: '+0,5 point de note Google en moyenne en 60 jours. De nombreuses heures récupérées par mois.',
   },
 ]
 
@@ -49,7 +49,7 @@ export function AutoreplyDemo() {
       setDemoState('done')
       await delay(900)
       setDemoState('published')
-      await delay(3000)
+      await delay(6000)
       setTypedText('')
     }
 
@@ -176,7 +176,7 @@ export function AutoreplyDemo() {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex items-center gap-2.5 px-4 py-3 rounded-lg border border-accent/20 bg-accent/5"
                   >
-                    <span className="font-mono text-xs text-accent">IA en cours</span>
+                    <span className="font-mono text-xs text-accent">Réflexion en cours</span>
                     <div className="flex gap-1">
                       <div className="w-1 h-1 rounded-full bg-accent dot-pulse-1" />
                       <div className="w-1 h-1 rounded-full bg-accent dot-pulse-2" />

@@ -23,10 +23,10 @@ const steps = [
   {
     number: '03',
     icon: Rocket,
-    title: 'En place en 2 à 3 semaines. Vous n\'y touchez plus.',
+    title: 'Automatisation complète. Vous n\'y touchez plus.',
     description:
       'On installe, on configure, on teste. Vous n\'avez rien à apprendre ni à gérer. C\'est en route, et ça tourne tout seul.',
-    detail: 'Suivi inclus. On reste disponibles.',
+    detail: 'Support inclus. On reste disponibles en cas de problème ou de modifications.',
   },
 ]
 

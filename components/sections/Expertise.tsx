@@ -5,18 +5,17 @@ import { AnimatedCounter } from '@/components/ui/AnimatedCounter'
 import { CheckCircle2 } from 'lucide-react'
 
 const stats = [
-  { value: 50, suffix: '+', label: 'PME accompagnées' },
-  { value: 5, suffix: ' ans', label: 'd\'exp. automatisation' },
+  { value: 5, suffix: '+', label: 'PME accompagnées' },
+  { value: 3, suffix: ' ans', label: "d'exp. automatisation" },
   { value: 72, prefix: '< ', suffix: 'h', label: 'déploiement max' },
   { value: 100, suffix: '%', label: 'suivi garanti' },
 ]
 
 const differentiators = [
   '1 seul interlocuteur du diagnostic à la livraison',
-  'Solutions no-code / low-code : pas de dépendance technique créée',
   'Livrables concrets avec ROI mesurable en semaines, pas en mois',
-  'Réactif et disponible — pas une grande agence qui vous oublie',
-  'On utilise les mêmes outils que ceux qu\'on vous recommande',
+  "Réactif et disponible. Nous ne sommes pas une grande agence qui vous oublie",
+  "On utilise les mêmes outils que ceux qu'on vous recommande",
 ]
 
 export function Expertise() {
@@ -69,7 +68,7 @@ export function Expertise() {
         <div>
           <p className="section-label mb-5">Ce qui nous différencie</p>
           <motion.ul
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-3"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
