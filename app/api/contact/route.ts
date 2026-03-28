@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { contactFormSchema } from '@/lib/validations'
-import { resend, CONTACT_EMAIL } from '@/lib/resend'
+import { getResend, CONTACT_EMAIL } from '@/lib/resend'
 
 export async function POST(req: NextRequest) {
   try {
@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
       unknown: 'Pas encore défini',
     }
 
-    await resend.emails.send({
+    await getResend().emails.send({
       from: 'Optival Contact <contact@optival.fr>',
       to: CONTACT_EMAIL,
       replyTo: email,
