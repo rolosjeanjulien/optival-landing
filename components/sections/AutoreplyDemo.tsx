@@ -49,7 +49,7 @@ export function AutoreplyDemo() {
       setDemoState('done')
       await delay(900)
       setDemoState('published')
-      await delay(3000)
+      await delay(6000)
       setTypedText('')
     }
 
