@@ -145,21 +145,35 @@ export function Hero() {
                 </div>
 
                 <div className="space-y-3">
-                  {/* Avis entrant */}
+                  {/* Avis entrant — format Google authentique */}
                   <div className="bg-white/5 rounded-lg p-3.5 border border-white/8">
-                    <div className="flex justify-between items-start gap-2 mb-2">
-                      <div>
-                        <span className="text-yellow-400 text-xs tracking-wide">★★★★</span>
-                        <p className="text-white text-sm font-medium mt-0.5 leading-snug">
-                          "Excellent restaurant, je reviendrai !"
-                        </p>
+                    {/* Header : avatar + nom + date */}
+                    <div className="flex items-start justify-between gap-2 mb-2.5">
+                      <div className="flex items-center gap-2.5">
+                        {/* Avatar initial Google */}
+                        <div className="w-8 h-8 rounded-full bg-[#1A73E8] flex items-center justify-center shrink-0">
+                          <span className="text-white text-sm font-medium">S</span>
+                        </div>
+                        <div>
+                          <p className="text-white text-xs font-semibold leading-tight">Sophie M.</p>
+                          <p className="text-white/30 text-[10px] font-mono leading-tight mt-0.5">Guide local · 12 avis</p>
+                        </div>
                       </div>
-                      <span className="text-white/20 text-xs shrink-0 font-mono">2 min</span>
+                      {/* Logo Google */}
+                      <div className="flex items-center gap-1 shrink-0 mt-0.5">
+                        <span className="text-[#EA4335] text-xs font-bold" style={{ fontFamily: 'serif' }}>G</span>
+                        <span className="text-white/20 text-[10px] font-mono">oogle</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-3 h-3 bg-[#EA4335] rounded-sm" />
-                      <span className="text-white/25 text-xs font-mono">Google · My Business</span>
+                    {/* Étoiles + date */}
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="text-[#FBBC04] text-sm tracking-tight">★★★★★</span>
+                      <span className="text-white/25 text-[10px] font-mono">il y a 2 jours</span>
                     </div>
+                    {/* Texte de l'avis */}
+                    <p className="text-white/70 text-xs leading-relaxed">
+                      Excellent accueil et cuisine raffinée. Le service était impeccable du début à la fin. Je reviendrai sans hésiter !
+                    </p>
                   </div>
 
                   {/* IA processing */}
