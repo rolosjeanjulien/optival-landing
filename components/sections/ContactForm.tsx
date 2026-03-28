@@ -6,7 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Loader2, CheckCircle2, Lock } from 'lucide-react'
 import { contactFormSchema, type ContactFormData } from '@/lib/validations'
-import { MagneticButton } from '@/components/ui/MagneticButton'
 
 const needOptions = [
   { value: 'autoreply', label: 'Autoreply — Avis Google' },
@@ -18,12 +17,7 @@ const needOptions = [
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<ContactFormData>({
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   })
 
@@ -44,171 +38,141 @@ export function ContactForm() {
   }
 
   const inputClass = (hasError: boolean) =>
-    `w-full bg-white/10 border ${
-      hasError ? 'border-red-400' : 'border-white/20'
-    } rounded-button px-4 py-3 text-white placeholder-white/40 text-sm focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400 transition-all`
+    `w-full bg-white/5 border ${hasError ? 'border-red-400' : 'border-white/10'} rounded-button px-4 py-3.5 text-white placeholder-white/25 text-sm font-mono focus:outline-none focus:border-accent transition-all`
 
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-[#0A0A0F]">
-      {/* Gradient blobs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="gradient-blob blob-1 opacity-15" />
-        <div className="gradient-blob blob-2 opacity-15" />
-      </div>
-      <div className="absolute inset-0 bg-[#0A0A0F]/80" />
+    <section id="contact" className="bg-[#0F0E0D] grain-overlay py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
 
-      <div className="relative z-10 max-w-2xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-12"
-        >
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Prêt à récupérer<br />du temps cette semaine ?
-          </h2>
-          <p className="text-white/60 text-lg">
-            Décrivez votre situation en 2 minutes.
-            On revient avec une proposition concrète sous 24h.
-          </p>
-        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-16 items-start">
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <AnimatePresence mode="wait">
-            {status === 'success' ? (
-              <motion.div
-                key="success"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                className="bg-white/5 border border-white/10 rounded-card p-12 text-center flex flex-col items-center gap-4"
-              >
-                <CheckCircle2 size={48} className="text-emerald-400" />
-                <h3 className="text-white text-2xl font-bold font-display">Message bien reçu !</h3>
-                <p className="text-white/60">
-                  Jean-Julien revient vers vous sous 24h.
-                </p>
-                <p className="text-white/40 text-sm">En attendant : contact@optival.fr</p>
-              </motion.div>
-            ) : (
-              <motion.form
-                key="form"
-                onSubmit={handleSubmit(onSubmit)}
-                className="flex flex-col gap-4"
-              >
-                {/* Honeypot — invisible */}
-                <input
-                  {...register('honeypot')}
-                  type="text"
-                  tabIndex={-1}
-                  className="absolute opacity-0 pointer-events-none"
-                  aria-hidden="true"
-                />
+          {/* Texte gauche */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col gap-6"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-6 h-px bg-accent" />
+              <span className="font-mono text-xs text-white/30 tracking-[0.2em] uppercase">
+                Contact
+              </span>
+            </div>
+            <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
+              Prêt à récupérer<br />du temps<br />
+              <span className="text-white/30">cette semaine ?</span>
+            </h2>
+            <p className="text-white/40 text-lg max-w-sm">
+              Décrivez votre situation en 2 minutes. On revient avec une proposition concrète sous 24h.
+            </p>
+            <div className="pt-4 border-t border-white/8">
+              <a href="mailto:contact@optival.fr" className="text-white/40 text-sm font-mono hover:text-white/70 transition-colors">
+                contact@optival.fr
+              </a>
+            </div>
+          </motion.div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <input
-                      {...register('firstName')}
-                      type="text"
-                      placeholder="Prénom *"
-                      className={inputClass(!!errors.firstName)}
-                    />
-                    {errors.firstName && (
-                      <p className="mt-1 text-xs text-red-400">{errors.firstName.message}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <input
-                      {...register('email')}
-                      type="email"
-                      placeholder="Email professionnel *"
-                      className={inputClass(!!errors.email)}
-                    />
-                    {errors.email && (
-                      <p className="mt-1 text-xs text-red-400">{errors.email.message}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div>
+          {/* Formulaire */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <AnimatePresence mode="wait">
+              {status === 'success' ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+                  className="border border-white/10 rounded-[12px] p-12 text-center flex flex-col items-center gap-4"
+                >
+                  <CheckCircle2 size={40} className="text-[#16A34A]" />
+                  <h3 className="font-display text-white text-2xl font-bold">Message bien reçu !</h3>
+                  <p className="text-white/40">Jean-Julien revient vers vous sous 24h.</p>
+                  <p className="text-white/25 text-sm font-mono">contact@optival.fr</p>
+                </motion.div>
+              ) : (
+                <motion.form
+                  key="form"
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="flex flex-col gap-3"
+                >
                   <input
-                    {...register('phone')}
-                    type="tel"
-                    placeholder="Téléphone (optionnel)"
-                    className={inputClass(false)}
+                    {...register('honeypot')}
+                    type="text"
+                    tabIndex={-1}
+                    className="absolute opacity-0 pointer-events-none"
+                    aria-hidden="true"
                   />
-                </div>
 
-                <div>
-                  <select
-                    {...register('need')}
-                    className={`${inputClass(!!errors.need)} appearance-none`}
-                    defaultValue=""
-                  >
-                    <option value="" disabled className="bg-[#0F172A]">
-                      Votre besoin principal *
-                    </option>
-                    {needOptions.map((o) => (
-                      <option key={o.value} value={o.value} className="bg-[#0F172A]">
-                        {o.label}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.need && (
-                    <p className="mt-1 text-xs text-red-400">{errors.need.message}</p>
-                  )}
-                </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <input {...register('firstName')} type="text" placeholder="Prénom *" className={inputClass(!!errors.firstName)} />
+                      {errors.firstName && <p className="mt-1 text-xs text-red-400 font-mono">{errors.firstName.message}</p>}
+                    </div>
+                    <div>
+                      <input {...register('email')} type="email" placeholder="Email *" className={inputClass(!!errors.email)} />
+                      {errors.email && <p className="mt-1 text-xs text-red-400 font-mono">{errors.email.message}</p>}
+                    </div>
+                  </div>
 
-                <div>
+                  <input {...register('phone')} type="tel" placeholder="Téléphone (optionnel)" className={inputClass(false)} />
+
+                  <div>
+                    <select
+                      {...register('need')}
+                      className={`${inputClass(!!errors.need)} appearance-none`}
+                      defaultValue=""
+                    >
+                      <option value="" disabled className="bg-[#0F0E0D]">Votre besoin principal *</option>
+                      {needOptions.map((o) => (
+                        <option key={o.value} value={o.value} className="bg-[#0F0E0D]">{o.label}</option>
+                      ))}
+                    </select>
+                    {errors.need && <p className="mt-1 text-xs text-red-400 font-mono">{errors.need.message}</p>}
+                  </div>
+
                   <textarea
                     {...register('message')}
                     rows={4}
                     placeholder="Décrivez brièvement votre situation... (optionnel)"
                     className={`${inputClass(false)} resize-none`}
                   />
-                </div>
 
-                {status === 'error' && (
-                  <p className="text-red-400 text-sm text-center">
-                    Une erreur est survenue. Réessayez ou écrivez à contact@optival.fr
-                  </p>
-                )}
+                  {status === 'error' && (
+                    <p className="text-red-400 text-xs font-mono text-center">
+                      Erreur. Réessayez ou écrivez à contact@optival.fr
+                    </p>
+                  )}
 
-                <div className="flex flex-col items-center gap-3 pt-2">
                   <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className="relative overflow-hidden w-full sm:w-auto bg-indigo-500 hover:bg-indigo-600 disabled:opacity-60 text-white font-semibold px-10 py-4 rounded-button shimmer-button transition-colors flex items-center justify-center gap-2 text-base"
+                    className="btn-primary btn-lg group w-full justify-center disabled:opacity-50 mt-1"
                   >
                     {status === 'loading' ? (
-                      <>
-                        <Loader2 size={18} className="animate-spin" />
-                        Envoi en cours...
-                      </>
+                      <><Loader2 size={16} className="animate-spin" /> Envoi en cours...</>
                     ) : (
-                      '→ Envoyer ma demande'
+                      <> Envoyer ma demande <span className="btn-arrow">→</span></>
                     )}
                   </button>
-                  <p className="text-white/30 text-xs flex items-center gap-1.5">
-                    <Lock size={11} />
+
+                  <p className="text-white/20 text-xs font-mono flex items-center justify-center gap-1.5">
+                    <Lock size={10} />
                     Données confidentielles · Aucun spam ·{' '}
-                    <a href="/politique-de-confidentialite" className="hover:text-white/60 transition-colors underline">
-                      Politique de confidentialité
+                    <a href="/politique-de-confidentialite" className="hover:text-white/40 transition-colors underline">
+                      RGPD
                     </a>
                   </p>
-                </div>
-              </motion.form>
-            )}
-          </AnimatePresence>
-        </motion.div>
+                </motion.form>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        </div>
       </div>
     </section>
   )

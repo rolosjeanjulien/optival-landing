@@ -23,56 +23,55 @@ const tools = ['Make', 'Claude AI', 'Next.js', 'Webflow', 'Notion', 'Zapier']
 
 export function Expertise() {
   return (
-    <section id="expertise" className="bg-white py-24 px-4 sm:px-6 lg:px-8">
+    <section id="expertise" className="bg-bg-surface py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
+
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
-          className="mb-12"
+          transition={{ duration: 0.6 }}
+          className="mb-16"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#64748B] mb-3">
-            Votre interlocuteur
-          </p>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A]">
-            Un expert technique.<br />
-            Un seul interlocuteur.<br />
-            De A à Z.
+          <p className="section-label mb-4">Votre interlocuteur</p>
+          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink leading-tight">
+            Un expert technique.<br />Un seul interlocuteur.<br />
+            <span className="text-muted">De A à Z.</span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
           {/* Profil */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-7"
           >
-            {/* Photo placeholder */}
-            <div className="w-24 h-24 bg-gradient-to-br from-indigo-400 to-violet-500 rounded-2xl flex items-center justify-center text-white text-3xl font-bold shadow-card">
+            {/* Avatar — craft: carré, pas arrondi */}
+            <div className="w-20 h-20 bg-ink rounded-[10px] flex items-center justify-center text-white font-display font-bold text-2xl">
               JJ
             </div>
 
             <div>
-              <p className="font-display text-2xl font-bold text-[#0F172A]">Jean-Julien Rols</p>
-              <p className="text-[#64748B] font-medium mt-1">Fondateur d'Optival</p>
+              <p className="font-display text-2xl font-bold text-ink">Jean-Julien Rols</p>
+              <p className="text-muted mt-1">Fondateur d'Optival</p>
             </div>
 
-            <p className="text-[#64748B] leading-relaxed max-w-lg">
-              Consultant en automatisation IA, développeur web, et créateur d'Autoreply. J'aide
-              les dirigeants de PME à gagner du temps et à moderniser leur activité — sans vous
-              noyer dans le jargon.
+            <p className="text-muted leading-relaxed max-w-md">
+              Consultant en automatisation IA, développeur web, et créateur d'Autoreply. J'aide les
+              dirigeants de PME à gagner du temps et à moderniser leur activité — sans jargon.
             </p>
 
-            {/* Outils */}
+            {/* Outils — monospace, discret */}
             <div className="flex flex-wrap gap-2">
               {tools.map((tool) => (
                 <span
                   key={tool}
-                  className="bg-[#F8FAFC] border border-gray-200 text-[#0F172A] text-sm font-medium px-3 py-1.5 rounded-full"
+                  className="font-mono text-xs bg-surface border border-ink/10 text-ink/50 px-3 py-1.5 rounded"
                 >
                   {tool}
                 </span>
@@ -81,19 +80,20 @@ export function Expertise() {
           </motion.div>
 
           {/* Preuves */}
-          <div className="flex flex-col gap-10">
-            {/* Compteurs */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <div className="flex flex-col gap-12">
+
+            {/* Compteurs — typographie forte, pas de fanfare */}
+            <div className="grid grid-cols-2 gap-px bg-ink/8 border border-ink/8">
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="flex flex-col gap-1"
+                  className="bg-bg-surface p-6 flex flex-col gap-1"
                 >
-                  <p className="font-display text-3xl sm:text-4xl font-bold text-[#0F172A]">
+                  <p className="font-display text-4xl sm:text-5xl font-bold text-ink leading-none">
                     <AnimatedCounter
                       value={stat.value}
                       suffix={stat.suffix}
@@ -101,34 +101,32 @@ export function Expertise() {
                       delay={i * 0.15}
                     />
                   </p>
-                  <p className="text-xs text-[#64748B] leading-tight">{stat.label}</p>
+                  <p className="text-xs text-muted font-mono leading-tight">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
 
             {/* Différenciateurs */}
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#64748B] mb-5">
-                Ce qui nous différencie
-              </p>
+              <p className="section-label mb-5">Ce qui nous différencie</p>
               <motion.ul
-                className="flex flex-col gap-3"
+                className="space-y-3"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
-                variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+                variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
               >
                 {differentiators.map((item) => (
                   <motion.li
                     key={item}
                     variants={{
-                      hidden: { opacity: 0, x: 20 },
-                      visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
+                      hidden: { opacity: 0, x: 10 },
+                      visible: { opacity: 1, x: 0, transition: { duration: 0.35 } },
                     }}
                     className="flex items-start gap-3"
                   >
-                    <CheckCircle2 size={18} className="text-indigo-500 shrink-0 mt-0.5" />
-                    <span className="text-[#0F172A] text-sm leading-relaxed">{item}</span>
+                    <CheckCircle2 size={16} className="text-accent shrink-0 mt-0.5" />
+                    <span className="text-ink/70 text-sm leading-relaxed">{item}</span>
                   </motion.li>
                 ))}
               </motion.ul>

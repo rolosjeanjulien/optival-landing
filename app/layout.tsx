@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Syne, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { CustomCursor } from '@/components/layout/CustomCursor'
 import { GSAPProvider } from '@/components/providers/GSAPProvider'
@@ -8,6 +8,20 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
+})
+
+const syne = Syne({
+  subsets: ['latin'],
+  variable: '--font-syne',
+  display: 'swap',
+  weight: ['400', '500', '600', '700', '800'],
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+  display: 'swap',
+  weight: ['400', '500'],
 })
 
 export const metadata: Metadata = {
@@ -44,8 +58,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={inter.variable}>
-      <body className="antialiased font-sans bg-white text-[#0F172A]">
+    <html lang="fr" className={`${inter.variable} ${syne.variable} ${jetbrainsMono.variable}`}>
+      <body className="antialiased font-sans bg-bg-surface text-ink">
         <GSAPProvider>
           <CustomCursor />
           {children}
