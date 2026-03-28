@@ -36,7 +36,7 @@ export function Services() {
           className="mb-16"
         >
           <p className="section-label mb-4">Conseil & Accompagnement IA</p>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink leading-tight max-w-3xl">
+          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink max-w-3xl" style={{ lineHeight: 1.1 }}>
             On s'installe. On identifie.<br />On livre.
           </h2>
           <p className="mt-5 text-muted text-lg max-w-xl">
@@ -63,7 +63,7 @@ export function Services() {
             </div>
 
             <div>
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-ink leading-tight mb-3">
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-ink leading-snug mb-3">
                 Un site qui travaille,<br />pas juste qui existe.
               </h3>
               <p className="text-muted leading-relaxed">
@@ -107,7 +107,7 @@ export function Services() {
             </div>
 
             <div>
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-ink leading-tight mb-3">
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-ink leading-snug mb-3">
                 Vos tâches répétitives ?<br />L'IA s'en charge.
               </h3>
               <p className="text-muted leading-relaxed">

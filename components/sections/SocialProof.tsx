@@ -40,7 +40,7 @@ export function SocialProof() {
           className="mb-16"
         >
           <p className="section-label mb-4">Ils l'ont fait. Voici ce qu'ils en disent.</p>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink leading-tight">
+          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink" style={{ lineHeight: 1.1 }}>
             Des résultats concrets,<br className="hidden sm:block" />
             <span className="text-muted">pas des promesses.</span>
           </h2>

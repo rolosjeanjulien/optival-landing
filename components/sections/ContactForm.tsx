@@ -60,7 +60,7 @@ export function ContactForm() {
                 Contact
               </span>
             </div>
-            <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
+            <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white" style={{ lineHeight: 1.1 }}>
               Prêt à récupérer<br />du temps<br />
               <span className="text-white/30">cette semaine ?</span>
             </h2>

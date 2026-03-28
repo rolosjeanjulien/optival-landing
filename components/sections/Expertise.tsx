@@ -35,7 +35,7 @@ export function Expertise() {
           className="mb-16"
         >
           <p className="section-label mb-4">Votre interlocuteur</p>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink leading-tight">
+          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink" style={{ lineHeight: 1.1 }}>
             Un expert technique.<br />Un seul interlocuteur.<br />
             <span className="text-muted">De A à Z.</span>
           </h2>
