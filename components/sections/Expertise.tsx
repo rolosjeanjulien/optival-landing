@@ -5,21 +5,20 @@ import { AnimatedCounter } from '@/components/ui/AnimatedCounter'
 import { CheckCircle2 } from 'lucide-react'
 
 const stats = [
-  { value: 50, suffix: '+', label: 'PME accompagnées' },
-  { value: 5, suffix: ' ans', label: 'd\'exp. automatisation' },
+  { value: 5, suffix: '+', label: 'PME accompagnées' },
+  { value: 3, suffix: ' ans', label: 'd\'exp. automatisation' },
   { value: 72, prefix: '< ', suffix: 'h', label: 'déploiement max' },
   { value: 100, suffix: '%', label: 'suivi garanti' },
 ]
 
 const differentiators = [
   '1 seul interlocuteur du diagnostic à la livraison',
-  'Solutions no-code / low-code : pas de dépendance technique créée',
   'Livrables concrets avec ROI mesurable en semaines, pas en mois',
-  'Réactif et disponible — pas une grande agence qui vous oublie',
+  'Réactif et disponible. Nous ne sommes pas une grande agence qui vous oublie',
   'On utilise les mêmes outils que ceux qu\'on vous recommande',
 ]
 
-const tools = ['Make', 'Claude AI', 'Next.js', 'Webflow', 'Notion', 'Zapier']
+const tools = ['Make', 'N8N', 'Claude AI', 'Next.js', 'Webflow', 'Google AI', 'Notion', 'Zapier']
 
 export function Expertise() {
   return (
@@ -57,13 +56,13 @@ export function Expertise() {
             </div>
 
             <div>
-              <p className="font-display text-2xl font-bold text-ink">Jean-Julien Rols</p>
+              <p className="font-display text-2xl font-bold text-ink">Jean-Julien Rolos</p>
               <p className="text-muted mt-1">Fondateur d'Optival</p>
             </div>
 
             <p className="text-muted leading-relaxed max-w-md">
-              Consultant en automatisation IA, développeur web, et créateur d'Autoreply. J'aide les
-              dirigeants de PME à gagner du temps et à moderniser leur activité — sans jargon.
+              Ingénieur formé et spécialisé en optimisation de produit ou de process, et créateur d'Autoreply. J'aide les
+              dirigeants de PME à gagner du temps et à moderniser leurs activités en m'adaptant au besoins concrets.
             </p>
 
             {/* Outils — monospace, discret */}
