@@ -55,7 +55,7 @@ export function Hero() {
             >
               <div className="w-6 h-px bg-accent" />
               <span className="font-mono text-xs text-white/40 tracking-[0.2em] uppercase">
-                Automatisation · Sites web · Avis Google
+                Automatisation · Optimisation
               </span>
             </motion.div>
 
