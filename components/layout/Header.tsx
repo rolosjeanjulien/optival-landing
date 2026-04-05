@@ -94,7 +94,7 @@ export function Header() {
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed inset-0 bg-bg-surface z-40 flex flex-col p-8 gap-6 lg:hidden"
+            className="fixed inset-0 bg-bg-surface z-[60] flex flex-col p-8 gap-6 lg:hidden"
           >
             <div className="flex justify-between items-center">
               <span className="font-display font-bold text-xl text-ink">Optival</span>
