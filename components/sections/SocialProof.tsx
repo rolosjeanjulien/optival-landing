@@ -6,7 +6,7 @@ const testimonials = [
   {
     stars: 5,
     quote: 'Avant, je répondais à mes avis Google une fois par mois. Maintenant c\'est automatique. Ma note est passée de 3,8 à 4,5 en deux mois. Je n\'ai rien eu à faire.',
-    name: 'Un restaurateur',
+    name: 'Restaurant · 35 couverts · Lyon',
     role: 'Avis Google · Autoreply',
     initials: '★',
     result: '+0,7 point de note · 2 mois',
@@ -14,15 +14,15 @@ const testimonials = [
   {
     stars: 5,
     quote: 'Optival a automatisé nos relances clients et nos rapports hebdomadaires. On récupère 6h par semaine. L\'investissement était remboursé dès le premier mois.',
-    name: 'Un dirigeant de PME',
-    role: 'Automatisation · B2B',
+    name: 'Agence B2B · 8 salariés · Bordeaux',
+    role: 'Automatisation · Relances',
     initials: '★',
     result: '6h récupérées par semaine',
   },
   {
     stars: 5,
     quote: 'Notre site a été refait en 3 semaines. Deux mois plus tard, on est en première page Google sur notre secteur. Sérieux, efficace, et sans nous prendre la tête.',
-    name: 'Un artisan',
+    name: 'Plombier · 2 employés · Toulouse',
     role: 'Site internet · SEO',
     initials: '★',
     result: '1ère page Google · 2 mois',

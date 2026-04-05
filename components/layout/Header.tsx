@@ -66,7 +66,7 @@ export function Header() {
                   : 'bg-white text-ink hover:bg-white/90'
               }`}
             >
-              Réserver un appel
+              Demander mon audit gratuit
               <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
             </a>
           </div>
@@ -121,7 +121,7 @@ export function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="btn-primary-light btn-lg group w-full justify-center"
               >
-                Réserver un appel <span className="btn-arrow">→</span>
+                Demander mon audit gratuit <span className="btn-arrow">→</span>
               </a>
             </div>
           </motion.div>

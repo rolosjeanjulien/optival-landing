@@ -160,10 +160,10 @@ export function Services() {
           className="flex flex-col sm:flex-row items-center gap-4 mt-12"
         >
           <a href="#contact" className="btn-primary-light btn-lg group">
-            Parler de mon projet <span className="btn-arrow">→</span>
+            Demander mon audit gratuit <span className="btn-arrow">→</span>
           </a>
           <p className="text-sm text-muted">
-            Réponse sous 24h · Sans engagement · 1 seul interlocuteur
+            À partir de 490 €/mois · Sans engagement · Devis en 48h
           </p>
         </motion.div>
 

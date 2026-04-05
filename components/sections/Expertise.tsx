@@ -14,8 +14,9 @@ const stats = [
 const differentiators = [
   '1 seul interlocuteur du diagnostic à la livraison',
   'Livrables concrets avec ROI mesurable en semaines, pas en mois',
-  "Réactif et disponible. Nous ne sommes pas une grande agence qui vous oublie",
-  "On utilise les mêmes outils que ceux qu'on vous recommande",
+  'Réactif et disponible. Nous ne sommes pas une grande agence qui vous oublie',
+  'On utilise les mêmes outils que ceux qu\'on vous recommande',
+  'Sans engagement. Pas de contrat longue durée. Si ça ne fonctionne pas, vous arrêtez.',
 ]
 
 export function Expertise() {

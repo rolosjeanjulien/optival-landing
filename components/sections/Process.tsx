@@ -10,7 +10,7 @@ const steps = [
     title: 'Un appel de 30 min — offert',
     description:
       'Vous nous expliquez votre quotidien en quelques mots. Pas besoin de préparer quoi que ce soit. On pose des questions simples.',
-    detail: 'Aucune technique. Aucun engagement.',
+    detail: 'Aucune technique. Aucun engagement. En français, avec un interlocuteur français.',
   },
   {
     number: '02',
@@ -18,7 +18,7 @@ const steps = [
     title: 'On vous dit exactement ce qu\'on peut faire',
     description:
       'En 48h, vous recevez une proposition claire : ce qu\'on automatise, ce que ça vous coûte, et combien de temps vous allez récupérer chaque semaine.',
-    detail: 'Un chiffrage précis, sans surprise.',
+    detail: 'Devis détaillé · Facture française · TVA incluse.',
   },
   {
     number: '03',
@@ -26,7 +26,7 @@ const steps = [
     title: 'Automatisation complète. Vous n\'y touchez plus.',
     description:
       'On installe, on configure, on teste. Vous n\'avez rien à apprendre ni à gérer. C\'est en route, et ça tourne tout seul.',
-    detail: 'Support inclus. On reste disponibles en cas de problème ou de modifications.',
+    detail: 'Support inclus · Données hébergées en Europe · Conforme RGPD.',
   },
 ]
 
@@ -119,7 +119,7 @@ export function Process() {
             rel="noopener noreferrer"
             className="btn-primary btn-lg group"
           >
-            Je réserve mon appel gratuit de 30 min
+            Demander mon audit gratuit
             <span className="btn-arrow">→</span>
           </a>
           <p className="text-sm text-white/30">

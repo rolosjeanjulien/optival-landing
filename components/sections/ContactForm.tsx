@@ -65,7 +65,7 @@ export function ContactForm() {
               <br />votre situation.
             </h2>
             <p className="text-white/40 text-lg max-w-sm">
-              Un appel de 30 min suffit. On vous dit ce qu'on peut faire et ce que ça vous coûte. Sans engagement.
+              Un audit gratuit de 30 min. On identifie ce qu'on peut automatiser et ce que ça vous coûte. Sans engagement.
             </p>
 
             {/* Calendly — point d'entrée principal */}
@@ -76,7 +76,7 @@ export function ContactForm() {
               className="inline-flex items-center gap-3 bg-accent text-white font-semibold px-6 py-4 rounded-button hover:bg-accent/90 transition-colors group self-start"
             >
               <CalendarDays size={18} />
-              Réserver mon appel gratuit de 30 min
+              Demander mon audit gratuit
               <span className="group-hover:translate-x-0.5 transition-transform">→</span>
             </a>
 

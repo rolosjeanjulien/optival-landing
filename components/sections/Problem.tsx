@@ -10,7 +10,7 @@ const problems = [
   },
   {
     number: '02',
-    quote: '"Je perds des heures sur des tâches que l\'IA pourrait faire à ma place."',
+    quote: '"Je perds des heures sur des tâches qu\'un assistant pourrait gérer à ma place."',
     tag: 'Productivité',
   },
   {

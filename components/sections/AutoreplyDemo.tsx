@@ -122,9 +122,12 @@ export function AutoreplyDemo() {
               </motion.div>
             ))}
 
-            <div className="pt-8">
+            <p className="text-white/50 text-sm mt-4 border-t border-white/8 pt-4">
+              Autoreply, c'est comme avoir quelqu'un qui s'occupe de vos avis Google — sans le recruter.
+            </p>
+            <div className="pt-4">
               <a href="#contact" className="btn-primary btn-md group">
-                Réserver un appel <span className="btn-arrow">→</span>
+                Demander mon audit gratuit <span className="btn-arrow">→</span>
               </a>
             </div>
           </motion.div>

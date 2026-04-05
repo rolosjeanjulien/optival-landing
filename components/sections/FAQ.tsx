@@ -29,6 +29,10 @@ const faqs = [
     q: "Quel est le coût d'Autoreply ?",
     a: "La grille tarifaire est disponible sur demande. Elle est indexée sur votre volume d'avis mensuel. Contactez-nous pour un devis personnalisé.",
   },
+  {
+    q: "Où sont hébergées mes données ?",
+    a: "En Europe. Nous utilisons des hébergeurs conformes au RGPD. Vos données clients (avis, contacts, emails) ne sont jamais revendues ni utilisées pour entraîner des modèles IA. Nous sommes une entreprise française soumise au droit français.",
+  },
 ]
 
 function FAQItem({ q, a }: { q: string; a: string }) {

@@ -86,7 +86,7 @@ export function Hero() {
               className="text-white/50 text-lg leading-relaxed max-w-lg"
             >
               Répondre aux avis Google, envoyer des relances, tenir votre site à jour...
-              Ce sont des heures perdues chaque semaine. On les récupère pour vous.
+              Ce sont 4 à 8 heures perdues chaque semaine. On vous les rend.
             </motion.p>
 
             {/* CTAs */}
@@ -96,12 +96,12 @@ export function Hero() {
               transition={{ duration: 0.4, delay: 1.3 }}
               className="flex flex-col sm:flex-row gap-3 pt-2"
             >
-              <a href="#process" className="btn-primary btn-lg group">
-                Voir comment ça marche
+              <a href="#contact" className="btn-primary btn-lg group">
+                Demander mon audit gratuit
                 <span className="btn-arrow">→</span>
               </a>
-              <a href="#contact" className="btn-ghost btn-lg group">
-                Réserver un appel gratuit
+              <a href="#process" className="btn-ghost btn-lg group">
+                Voir comment ça marche
                 <span className="btn-arrow">↓</span>
               </a>
             </motion.div>
@@ -114,9 +114,9 @@ export function Hero() {
               className="flex flex-wrap gap-x-6 gap-y-2 pt-2 border-t border-white/10"
             >
               {[
-                'Opérationnel en 3 jours',
-                'Pas de jargon technique',
-                '1 interlocuteur dédié',
+                'Opérationnel en 72h',
+                'Sans engagement',
+                'Entreprise française · Données en Europe',
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2 text-sm text-white/40">
                   <CheckCircle size={13} className="text-accent shrink-0" />
