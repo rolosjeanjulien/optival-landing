@@ -124,7 +124,7 @@ export function AutoreplyDemo() {
 
             <div className="pt-8">
               <a href="#contact" className="btn-primary btn-md group">
-                Demander une démo <span className="btn-arrow">→</span>
+                Réserver un appel <span className="btn-arrow">→</span>
               </a>
             </div>
           </motion.div>

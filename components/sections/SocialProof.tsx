@@ -13,7 +13,7 @@ const testimonials = [
   },
   {
     stars: 5,
-    quote: 'Jean-Julien a automatisé nos relances clients et nos rapports hebdomadaires. On récupère 6h par semaine. L\'investissement était remboursé dès le premier mois.',
+    quote: 'Optival a automatisé nos relances clients et nos rapports hebdomadaires. On récupère 6h par semaine. L\'investissement était remboursé dès le premier mois.',
     name: 'Un dirigeant de PME',
     role: 'Automatisation · B2B',
     initials: '★',
