@@ -1,14 +1,22 @@
 'use client'
 
+import { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Globe, Zap, Search, Wrench, Mail, BarChart3, Smartphone, Link2, ClipboardList } from 'lucide-react'
+import { gsap } from '@/lib/gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
+import {
+  Search, Wrench, Zap, Star,
+  Mail, BarChart3, Smartphone, Link2, ClipboardList,
+} from 'lucide-react'
 
+/* ─── Données pills automatisation ─── */
 const automationPills = [
   { icon: Mail, label: 'Relances clients' },
   { icon: BarChart3, label: 'Rapports auto' },
   { icon: Smartphone, label: 'Social media' },
-  { icon: Mail, label: 'Tri d\'emails' },
-  { icon: Link2, label: 'Connexion d\'outils' },
+  { icon: Mail, label: "Tri d'emails" },
+  { icon: Link2, label: "Connexion d'outils" },
   { icon: ClipboardList, label: 'Process métier' },
 ]
 
@@ -22,7 +30,54 @@ const pillItem = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.25 } },
 }
 
+/* ─── Autoreply demo ─── */
+const RESPONSE_TEXT =
+  "Merci beaucoup pour votre retour ! Nous sommes ravis que votre expérience ait été à la hauteur. Toute l'équipe sera heureuse de vous accueillir de nouveau. 🙏"
+
+function delay(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
 export function Services() {
+  const demoRef = useRef<HTMLDivElement>(null)
+  const reducedMotion = useReducedMotion()
+  const [demoState, setDemoState] = useState<'idle' | 'processing' | 'typing' | 'done' | 'published'>('idle')
+  const [typedText, setTypedText] = useState('')
+
+  useEffect(() => {
+    const runAnimation = async () => {
+      setDemoState('idle')
+      await delay(600)
+      setDemoState('processing')
+      await delay(1400)
+      setDemoState('typing')
+      for (let i = 0; i <= RESPONSE_TEXT.length; i++) {
+        setTypedText(RESPONSE_TEXT.slice(0, i))
+        await delay(22)
+      }
+      setDemoState('done')
+      await delay(900)
+      setDemoState('published')
+      await delay(6000)
+      setTypedText('')
+    }
+
+    const loop = () => {
+      runAnimation().then(() => setTimeout(loop, 800))
+    }
+
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: demoRef.current,
+        start: 'top 65%',
+        once: true,
+        onEnter: loop,
+      })
+    }, demoRef)
+
+    return () => ctx.revert()
+  }, [reducedMotion])
+
   return (
     <section id="services" className="bg-surface py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -37,43 +92,42 @@ export function Services() {
         >
           <p className="section-label mb-4">Ce qu'on fait pour vous</p>
           <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink leading-tight max-w-3xl">
-            Votre site web.<br />Vos tâches qui se répètent.
+            Votre site web. Vos tâches<br />qui se répètent. Vos avis Google.
           </h2>
           <p className="mt-5 text-muted text-lg max-w-xl">
-            Deux services concrets. Des résultats mesurables dès les premières semaines. Zéro jargon.
+            Trois services concrets. Des résultats mesurables. Zéro jargon.
           </p>
         </motion.div>
 
-        {/* Deux volets côte à côte — style craft, pas des cards rondes et ombrées */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-ink/8">
+        {/* ─── Grille 3 panneaux ─── */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-ink/8">
 
-          {/* Volet A — Sites web */}
+          {/* Panel 1 — Sites web */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
-            className="bg-bg-surface p-10 flex flex-col gap-6"
+            className="bg-bg-surface p-8 lg:p-10 flex flex-col gap-6"
           >
             <div className="flex items-start justify-between">
               <div className="w-10 h-10 bg-ink/5 rounded-lg flex items-center justify-center">
-                <Globe size={20} className="text-ink/60" />
+                <Search size={20} className="text-ink/60" />
               </div>
-              <span className="font-mono text-xs text-muted/50">01 / 02</span>
+              <span className="font-mono text-xs text-muted/50">01 / 03</span>
             </div>
 
             <div>
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-ink leading-tight mb-3">
-                Un site qui travaille,<br />pas juste qui existe.
+              <h3 className="font-display text-2xl font-bold text-ink leading-tight mb-3">
+                Un site qui travaille.<br />Livré en 3 semaines.
               </h3>
-              <p className="text-muted leading-relaxed">
+              <p className="text-muted leading-relaxed text-[15px]">
                 On crée ou refait votre site — beau, rapide, et qui apparaît sur Google.
-                Livré en 3 semaines. Vous n'avez rien à gérer ensuite.
+                SEO natif. Maintenance incluse. Vous n'avez rien à gérer ensuite.
               </p>
             </div>
 
-            {/* Points clés — style liste, pas des pills */}
-            <ul className="space-y-2">
+            <ul className="space-y-2 mt-auto">
               {[
                 { icon: Zap, text: 'Livraison en 3 semaines' },
                 { icon: Search, text: 'SEO natif dès le départ' },
@@ -86,32 +140,33 @@ export function Services() {
               ))}
             </ul>
 
-            <a href="#contact" className="btn-outline-light btn-sm group mt-auto self-start">
+            <a href="#contact" className="btn-outline-light btn-sm group self-start">
               En savoir plus <span className="btn-arrow">→</span>
             </a>
           </motion.div>
 
-          {/* Volet B — Automatisation */}
+          {/* Panel 2 — Automatisation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-bg-surface p-10 flex flex-col gap-6"
+            className="bg-bg-surface p-8 lg:p-10 flex flex-col gap-6"
           >
             <div className="flex items-start justify-between">
               <div className="w-10 h-10 bg-accent/8 rounded-lg flex items-center justify-center">
                 <Zap size={20} className="text-accent" />
               </div>
-              <span className="font-mono text-xs text-muted/50">02 / 02</span>
+              <span className="font-mono text-xs text-muted/50">02 / 03</span>
             </div>
 
             <div>
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-ink leading-tight mb-3">
+              <h3 className="font-display text-2xl font-bold text-ink leading-tight mb-3">
                 Vos tâches répétitives ?<br />On les supprime.
               </h3>
-              <p className="text-muted leading-relaxed">
-                Relances clients, rapports, emails, réseaux sociaux... En 30 minutes, on trouve ensemble ce qui peut se faire tout seul à votre place.
+              <p className="text-muted leading-relaxed text-[15px]">
+                Relances clients, rapports, emails, réseaux sociaux...
+                On identifie ce qui peut être automatisé et on le met en place.
               </p>
             </div>
 
@@ -135,20 +190,125 @@ export function Services() {
               ))}
             </motion.div>
 
-            {/* Résultat */}
-            <div className="border-l-2 border-accent pl-4 py-1">
-              <p className="text-sm text-ink/70">
-                En moyenne : 3 à 6 tâches identifiées en 30 min
-              </p>
-              <p className="text-sm font-semibold text-ink mt-0.5">
+            <div className="border-l-2 border-accent pl-4 py-1 mt-auto">
+              <p className="text-sm font-semibold text-ink">
                 → 4 à 8h récupérées par semaine
               </p>
             </div>
 
-            <a href="#contact" className="btn-outline-light btn-sm group mt-auto self-start">
-              Réserver un audit gratuit <span className="btn-arrow">→</span>
+            <a href="#contact" className="btn-outline-light btn-sm group self-start">
+              Audit gratuit <span className="btn-arrow">→</span>
             </a>
           </motion.div>
+
+          {/* Panel 3 — Avis Google (Autoreply) avec démo intégrée */}
+          <motion.div
+            ref={demoRef}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-bg-surface p-8 lg:p-10 flex flex-col gap-6"
+          >
+            <div className="flex items-start justify-between">
+              <div className="w-10 h-10 bg-accent/8 rounded-lg flex items-center justify-center">
+                <Star size={20} className="text-accent" />
+              </div>
+              <span className="font-mono text-xs text-muted/50">03 / 03</span>
+            </div>
+
+            <div>
+              <h3 className="font-display text-2xl font-bold text-ink leading-tight mb-3">
+                Vos avis Google répondus automatiquement.
+              </h3>
+              <p className="text-muted leading-relaxed text-[15px]">
+                Autoreply répond à chaque avis en quelques minutes.
+                Vous gardez la main. +0,5 point de note en 60 jours.
+              </p>
+            </div>
+
+            {/* Mini démo Autoreply intégrée */}
+            <div className="bg-[#1A1918] border border-ink/10 rounded-[10px] p-4 flex-1">
+              <div className="flex items-center gap-1.5 mb-3">
+                <div className="w-2 h-2 rounded-full bg-white/10" />
+                <div className="w-2 h-2 rounded-full bg-white/10" />
+                <div className="w-2 h-2 rounded-full bg-white/10" />
+                <span className="ml-1.5 font-mono text-[10px] text-white/20">Autoreply</span>
+              </div>
+
+              <div className="space-y-2.5">
+                {/* Avis */}
+                <motion.div
+                  animate={demoState !== 'idle' ? { opacity: 1, y: 0 } : { opacity: 0, y: 6 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-white/5 border border-white/8 rounded-lg p-3"
+                >
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="text-yellow-400 text-[10px] tracking-widest">★★★★★</span>
+                    <span className="text-white/20 text-[10px] font-mono">2 min</span>
+                  </div>
+                  <p className="text-white/70 text-xs leading-relaxed">
+                    "Excellent restaurant, je reviendrai !"
+                  </p>
+                </motion.div>
+
+                {/* IA processing */}
+                {demoState === 'processing' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg border border-accent/20 bg-accent/5"
+                  >
+                    <span className="font-mono text-[10px] text-accent">Réflexion en cours</span>
+                    <div className="flex gap-1">
+                      <div className="w-1 h-1 rounded-full bg-accent dot-pulse-1" />
+                      <div className="w-1 h-1 rounded-full bg-accent dot-pulse-2" />
+                      <div className="w-1 h-1 rounded-full bg-accent dot-pulse-3" />
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Réponse */}
+                {(demoState === 'typing' || demoState === 'done') && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="bg-white/5 border border-white/8 rounded-lg p-3"
+                  >
+                    <p className="font-mono text-[10px] text-white/25 mb-1">réponse générée</p>
+                    <p className="text-white/70 text-xs leading-relaxed">
+                      {typedText}
+                      {demoState === 'typing' && (
+                        <span className="cursor-blink text-accent">|</span>
+                      )}
+                    </p>
+                  </motion.div>
+                )}
+
+                {/* Publier */}
+                {(demoState === 'done' || demoState === 'published') && (
+                  <motion.button
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className={`w-full text-xs font-semibold rounded-lg py-2 transition-colors font-mono ${
+                      demoState === 'published'
+                        ? 'bg-[#16A34A] text-white'
+                        : 'bg-accent text-white hover:bg-accent-dark'
+                    }`}
+                  >
+                    {demoState === 'published'
+                      ? '✓ Publié sur Google'
+                      : '→ Publier sur Google'}
+                  </motion.button>
+                )}
+              </div>
+            </div>
+
+            <a href="#contact" className="btn-outline-light btn-sm group self-start">
+              Découvrir Autoreply <span className="btn-arrow">→</span>
+            </a>
+          </motion.div>
+
         </div>
 
         {/* CTA section */}
