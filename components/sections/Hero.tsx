@@ -37,6 +37,15 @@ export function Hero() {
       ref={containerRef}
       className="grain-overlay relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#0F0E0D]"
     >
+      {/* Gradient blobs — profondeur atmosphérique */}
+      {!reducedMotion && (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[-15%] left-[5%] w-[700px] h-[700px] rounded-full bg-accent/[0.07] blur-[130px] animate-gradient-move-1" />
+          <div className="absolute top-[25%] right-[-8%] w-[500px] h-[500px] rounded-full bg-accent/[0.05] blur-[110px] animate-gradient-move-2" />
+          <div className="absolute bottom-[-10%] left-[35%] w-[450px] h-[450px] rounded-full bg-white/[0.025] blur-[90px] animate-gradient-move-3" />
+        </div>
+      )}
+
       {/* Ligne décorative verticale — craft detail */}
       <div className="absolute left-0 top-0 bottom-0 w-px bg-white/5 hidden lg:block" />
 
@@ -59,7 +68,7 @@ export function Hero() {
               </span>
             </motion.div>
 
-            {/* H1 — Syne, révélation mot par mot */}
+            {/* H1 — révélation mot par mot */}
             <h1 className="font-display font-bold leading-[1.05] text-white"
                 style={{ fontSize: 'clamp(3rem, 8vw, 6.5rem)' }}>
               {words.map((word, i) => (
@@ -106,19 +115,37 @@ export function Hero() {
               </a>
             </motion.div>
 
-            {/* Social proof — minimal */}
+            {/* Métriques clés */}
             <motion.div
               initial={reducedMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 1.6 }}
-              className="flex flex-wrap gap-x-6 gap-y-2 pt-2 border-t border-white/10"
+              transition={{ duration: 0.5, delay: 1.5 }}
+              className="grid grid-cols-3 gap-4 pt-2 border-t border-white/8"
             >
               {[
-                'Opérationnel en 72h',
+                { value: '72h', label: 'Mise en route' },
+                { value: '4–8h', label: 'Récupérées / sem.' },
+                { value: '+0,5 pt', label: 'Google en 60 j.' },
+              ].map(({ value, label }) => (
+                <div key={label} className="flex flex-col gap-0.5">
+                  <span className="font-display font-bold text-white text-xl leading-none">{value}</span>
+                  <span className="text-white/30 text-xs font-mono">{label}</span>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Garanties */}
+            <motion.div
+              initial={reducedMotion ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 1.7 }}
+              className="flex flex-wrap gap-x-6 gap-y-2"
+            >
+              {[
                 'Sans engagement',
                 'Entreprise française · Données en Europe',
               ].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-white/40">
+                <div key={item} className="flex items-center gap-2 text-sm text-white/35">
                   <CheckCircle size={13} className="text-accent shrink-0" />
                   <span>{item}</span>
                 </div>
@@ -134,8 +161,7 @@ export function Hero() {
             className="hidden lg:block"
           >
             <div className="animate-float">
-              {/* Card mockup — style craft : border 1px, pas de glow violet */}
-              <div className="bg-[#1A1918] rounded-[12px] border border-white/10 p-5 w-full">
+              <div className="bg-[#1A1918] rounded-[12px] border border-white/10 p-5 w-full shadow-[0_0_60px_rgba(232,93,16,0.06)]">
                 {/* Chrome bar */}
                 <div className="flex items-center gap-1.5 mb-4">
                   <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
@@ -145,12 +171,10 @@ export function Hero() {
                 </div>
 
                 <div className="space-y-3">
-                  {/* Avis entrant — format Google authentique */}
+                  {/* Avis entrant */}
                   <div className="bg-white/5 rounded-lg p-3.5 border border-white/8">
-                    {/* Header : avatar + nom + date */}
                     <div className="flex items-start justify-between gap-2 mb-2.5">
                       <div className="flex items-center gap-2.5">
-                        {/* Avatar initial Google */}
                         <div className="w-8 h-8 rounded-full bg-[#1A73E8] flex items-center justify-center shrink-0">
                           <span className="text-white text-sm font-medium">S</span>
                         </div>
@@ -159,18 +183,15 @@ export function Hero() {
                           <p className="text-white/30 text-[10px] font-mono leading-tight mt-0.5">Guide local · 12 avis</p>
                         </div>
                       </div>
-                      {/* Logo Google */}
                       <div className="flex items-center gap-1 shrink-0 mt-0.5">
                         <span className="text-[#EA4335] text-xs font-bold" style={{ fontFamily: 'serif' }}>G</span>
                         <span className="text-white/20 text-[10px] font-mono">oogle</span>
                       </div>
                     </div>
-                    {/* Étoiles + date */}
                     <div className="flex items-center gap-2 mb-1.5">
                       <span className="text-[#FBBC04] text-sm tracking-tight">★★★★★</span>
                       <span className="text-white/25 text-[10px] font-mono">il y a 2 jours</span>
                     </div>
-                    {/* Texte de l'avis */}
                     <p className="text-white/70 text-xs leading-relaxed">
                       Excellent accueil et cuisine raffinée. Le service était impeccable du début à la fin. Je reviendrai sans hésiter !
                     </p>
