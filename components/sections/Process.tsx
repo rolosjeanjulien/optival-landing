@@ -62,47 +62,54 @@ export function Process() {
           </p>
         </motion.div>
 
-        {/* Étapes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
-          {steps.map((step, i) => {
-            const Icon = step.icon
-            return (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="bg-[#0F0E0D] p-8 lg:p-10 flex flex-col gap-5"
-              >
-                {/* Numéro + icône */}
-                <div className="flex items-start justify-between">
-                  <div className="w-11 h-11 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
-                    <Icon size={20} className="text-accent" />
-                  </div>
-                  <span className="font-mono text-xs text-white/20">{step.number}</span>
-                </div>
+        {/* Étapes avec connecteurs */}
+        <div className="relative">
+          {/* Ligne de connexion — desktop uniquement */}
+          <div className="hidden md:block absolute top-[2.75rem] left-[calc(33.333%_-_1px)] right-[calc(33.333%_-_1px)] h-px bg-white/8 z-0" />
 
-                {/* Titre */}
-                <h3
-                  className="font-display font-bold text-white leading-snug"
-                  style={{ fontSize: 'clamp(1.1rem, 2vw, 1.35rem)' }}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 relative z-10">
+            {steps.map((step, i) => {
+              const Icon = step.icon
+              return (
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: i * 0.12 }}
+                  className="bg-[#0F0E0D] p-8 lg:p-10 flex flex-col gap-5 group"
                 >
-                  {step.title}
-                </h3>
+                  {/* Numéro + icône */}
+                  <div className="flex items-start justify-between">
+                    <div className="w-11 h-11 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/15 group-hover:border-accent/30 transition-colors duration-200">
+                      <Icon size={20} className="text-accent" />
+                    </div>
+                    <span className="font-mono text-2xl font-bold text-white/8 leading-none">{step.number}</span>
+                  </div>
 
-                {/* Description */}
-                <p className="text-white/45 text-[15px] leading-relaxed flex-1">
-                  {step.description}
-                </p>
+                  {/* Titre */}
+                  <h3
+                    className="font-display font-bold text-white leading-snug"
+                    style={{ fontSize: 'clamp(1.1rem, 2vw, 1.35rem)' }}
+                  >
+                    {step.title}
+                  </h3>
 
-                {/* Détail — discret */}
-                <p className="text-xs font-mono text-accent/60 border-t border-white/8 pt-4">
-                  {step.detail}
-                </p>
-              </motion.div>
-            )
-          })}
+                  {/* Description */}
+                  <p className="text-white/45 text-[15px] leading-relaxed flex-1">
+                    {step.description}
+                  </p>
+
+                  {/* Détail */}
+                  <div className="border-t border-white/8 pt-4">
+                    <p className="text-xs font-mono text-accent/50">
+                      {step.detail}
+                    </p>
+                  </div>
+                </motion.div>
+              )
+            })}
+          </div>
         </div>
 
         {/* CTA Calendly */}

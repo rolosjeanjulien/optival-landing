@@ -38,6 +38,13 @@ function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
+const metrics = [
+  { value: '72h', label: 'Mise en route' },
+  { value: '4–8h', label: 'Récupérées / semaine' },
+  { value: '+0,5 pt', label: 'Note Google en 60 j.' },
+  { value: '+30%', label: 'Conversion devis' },
+]
+
 export function Services() {
   const demoRef = useRef<HTMLDivElement>(null)
   const reducedMotion = useReducedMotion()
@@ -88,7 +95,7 @@ export function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-12"
         >
           <p className="section-label mb-4">Ce qu'on fait pour vous</p>
           <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink leading-tight max-w-3xl">
@@ -99,8 +106,27 @@ export function Services() {
           </p>
         </motion.div>
 
+        {/* ─── Bande métriques ─── */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-ink/8 border border-ink/8 rounded-[12px] overflow-hidden mb-12"
+        >
+          {metrics.map(({ value, label }, i) => (
+            <div
+              key={label}
+              className="bg-bg-surface px-6 py-5 flex flex-col gap-1"
+            >
+              <span className="font-display font-bold text-2xl text-ink leading-none">{value}</span>
+              <span className="text-muted text-xs font-mono">{label}</span>
+            </div>
+          ))}
+        </motion.div>
+
         {/* ─── Grille 3 panneaux ─── */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-ink/8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-ink/8 border border-ink/8 rounded-[16px] overflow-hidden">
 
           {/* Panel 1 — Sites web */}
           <motion.div
@@ -108,13 +134,13 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
-            className="bg-bg-surface p-8 lg:p-10 flex flex-col gap-6"
+            className="bg-bg-surface p-8 lg:p-10 flex flex-col gap-6 group hover:bg-surface transition-colors duration-200"
           >
             <div className="flex items-start justify-between">
-              <div className="w-10 h-10 bg-ink/5 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-ink/5 rounded-lg flex items-center justify-center group-hover:bg-ink/8 transition-colors duration-200">
                 <Search size={20} className="text-ink/60" />
               </div>
-              <span className="font-mono text-xs text-muted/50">01 / 03</span>
+              <span className="font-mono text-xs text-muted/50">01</span>
             </div>
 
             <div>
@@ -140,31 +166,39 @@ export function Services() {
               ))}
             </ul>
 
-            <a href="#contact" className="btn-outline-light btn-sm group self-start">
+            <a href="#contact" className="btn-outline-light btn-sm group/btn self-start">
               En savoir plus <span className="btn-arrow">→</span>
             </a>
           </motion.div>
 
-          {/* Panel 2 — Automatisation */}
+          {/* Panel 2 — Automatisation (featured) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-bg-surface p-8 lg:p-10 flex flex-col gap-6"
+            className="bg-[#0F0E0D] p-8 lg:p-10 flex flex-col gap-6 relative"
           >
+            {/* Badge featured */}
+            <div className="absolute top-4 right-4">
+              <span className="inline-flex items-center gap-1 bg-accent/15 text-accent text-[10px] font-mono font-semibold px-2 py-1 rounded-full">
+                <Zap size={9} />
+                Populaire
+              </span>
+            </div>
+
             <div className="flex items-start justify-between">
-              <div className="w-10 h-10 bg-accent/8 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-accent/15 rounded-lg flex items-center justify-center">
                 <Zap size={20} className="text-accent" />
               </div>
-              <span className="font-mono text-xs text-muted/50">02 / 03</span>
+              <span className="font-mono text-xs text-white/20">02</span>
             </div>
 
             <div>
-              <h3 className="font-display text-2xl font-bold text-ink leading-tight mb-3">
+              <h3 className="font-display text-2xl font-bold text-white leading-tight mb-3">
                 Vos tâches répétitives ?<br />On les supprime.
               </h3>
-              <p className="text-muted leading-relaxed text-[15px]">
+              <p className="text-white/45 leading-relaxed text-[15px]">
                 Relances clients, rapports, emails, réseaux sociaux...
                 On identifie ce qui peut être automatisé et on le met en place.
               </p>
@@ -182,7 +216,7 @@ export function Services() {
                 <motion.span
                   key={label}
                   variants={pillItem}
-                  className="inline-flex items-center gap-1.5 bg-surface border border-ink/10 rounded-full px-3 py-1 text-xs font-mono text-ink/60"
+                  className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1 text-xs font-mono text-white/50"
                 >
                   <Icon size={11} className="text-accent" />
                   {label}
@@ -191,12 +225,12 @@ export function Services() {
             </motion.div>
 
             <div className="border-l-2 border-accent pl-4 py-1 mt-auto">
-              <p className="text-sm font-semibold text-ink">
+              <p className="text-sm font-semibold text-white">
                 → 4 à 8h récupérées par semaine
               </p>
             </div>
 
-            <a href="#contact" className="btn-outline-light btn-sm group self-start">
+            <a href="#contact" className="btn-primary btn-sm group self-start">
               Audit gratuit <span className="btn-arrow">→</span>
             </a>
           </motion.div>
@@ -208,13 +242,13 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-bg-surface p-8 lg:p-10 flex flex-col gap-6"
+            className="bg-bg-surface p-8 lg:p-10 flex flex-col gap-6 group hover:bg-surface transition-colors duration-200"
           >
             <div className="flex items-start justify-between">
-              <div className="w-10 h-10 bg-accent/8 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-accent/8 rounded-lg flex items-center justify-center group-hover:bg-accent/12 transition-colors duration-200">
                 <Star size={20} className="text-accent" />
               </div>
-              <span className="font-mono text-xs text-muted/50">03 / 03</span>
+              <span className="font-mono text-xs text-muted/50">03</span>
             </div>
 
             <div>
@@ -227,7 +261,7 @@ export function Services() {
               </p>
             </div>
 
-            {/* Mini démo Autoreply intégrée */}
+            {/* Mini démo Autoreply */}
             <div className="bg-[#1A1918] border border-ink/10 rounded-[10px] p-4 flex-1">
               <div className="flex items-center gap-1.5 mb-3">
                 <div className="w-2 h-2 rounded-full bg-white/10" />
@@ -237,7 +271,6 @@ export function Services() {
               </div>
 
               <div className="space-y-2.5">
-                {/* Avis */}
                 <motion.div
                   animate={demoState !== 'idle' ? { opacity: 1, y: 0 } : { opacity: 0, y: 6 }}
                   transition={{ duration: 0.3 }}
@@ -252,7 +285,6 @@ export function Services() {
                   </p>
                 </motion.div>
 
-                {/* IA processing */}
                 {demoState === 'processing' && (
                   <motion.div
                     initial={{ opacity: 0, y: 4 }}
@@ -268,7 +300,6 @@ export function Services() {
                   </motion.div>
                 )}
 
-                {/* Réponse */}
                 {(demoState === 'typing' || demoState === 'done') && (
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -285,7 +316,6 @@ export function Services() {
                   </motion.div>
                 )}
 
-                {/* Publier */}
                 {(demoState === 'done' || demoState === 'published') && (
                   <motion.button
                     initial={{ opacity: 0 }}
@@ -304,7 +334,7 @@ export function Services() {
               </div>
             </div>
 
-            <a href="#contact" className="btn-outline-light btn-sm group self-start">
+            <a href="#contact" className="btn-outline-light btn-sm group/btn self-start">
               Découvrir Autoreply <span className="btn-arrow">→</span>
             </a>
           </motion.div>

@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "Et si l'outil génère une mauvaise réponse sur Google ?",
-    a: "Vous choisissez le mode de publication qui vous convient. Un mode eemi-Auto est disponible: chaque réponse complexe vous est soumise par email. Vous répondez simplement \"OUI\" ou \"NON\". Aucune réponse n'est publiée sans votre accord si vous ne le souhaitez pas.",
+    a: "Vous choisissez le mode de publication qui vous convient. Un mode semi-Auto est disponible: chaque réponse complexe vous est soumise par email. Vous répondez simplement \"OUI\" ou \"NON\". Aucune réponse n'est publiée sans votre accord si vous ne le souhaitez pas.",
   },
   {
     q: 'Quels types de PME travaillez-vous avec ?',
@@ -39,17 +39,17 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="border-b border-gray-100 last:border-0">
+    <div className="border-b border-ink/8 last:border-0">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between gap-4 py-5 text-left group"
         aria-expanded={open}
       >
-        <span className="font-semibold text-[#0F172A] group-hover:text-indigo-600 transition-colors">
+        <span className="font-semibold text-ink group-hover:text-accent transition-colors duration-150">
           {q}
         </span>
-        <span className="shrink-0 text-indigo-500">
-          {open ? <Minus size={18} /> : <Plus size={18} />}
+        <span className="shrink-0 w-6 h-6 rounded-full bg-ink/5 flex items-center justify-center text-accent group-hover:bg-accent/10 transition-colors duration-150">
+          {open ? <Minus size={13} /> : <Plus size={13} />}
         </span>
       </button>
       <AnimatePresence initial={false}>
@@ -59,10 +59,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            transition={{ duration: 0.22, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-[#64748B] leading-relaxed">{a}</p>
+            <p className="pb-5 text-muted leading-relaxed">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -72,26 +72,27 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export function FAQ() {
   return (
-    <section className="bg-white py-24 px-4 sm:px-6 lg:px-8">
+    <section className="bg-surface py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.6 }}
+          className="mb-12"
         >
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#0F172A]">
-            On répond à vos vraies questions.
+          <p className="section-label mb-4">Questions fréquentes</p>
+          <h2 className="font-display font-bold text-4xl sm:text-5xl text-ink leading-tight">
+            On répond à vos<br />vraies questions.
           </h2>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.5 }}
-          className="bg-white border border-gray-100 rounded-card shadow-card px-6 sm:px-8"
+          className="bg-bg-surface border border-ink/8 rounded-card shadow-card px-6 sm:px-8"
         >
           {faqs.map((faq) => (
             <FAQItem key={faq.q} q={faq.q} a={faq.a} />
