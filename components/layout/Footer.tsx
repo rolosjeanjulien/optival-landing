@@ -39,9 +39,8 @@ export function Footer() {
             <p className="font-mono text-xs text-mist/30 uppercase tracking-widest">Services</p>
             <nav className="flex flex-col gap-2.5">
               {[
-                { label: 'Sites web & présence digitale', href: '#services' },
-                { label: 'Automatisation IA', href: '#services' },
-                { label: 'Autoreply', href: '#autoreply' },
+                { label: 'Automatisation et optimisation', href: '#services' },
+                { label: 'Autoreply', href: '#services' },
               ].map((l) => (
                 <a key={l.label} href={l.href} className="text-mist/40 text-sm hover:text-ivory transition-colors">
                   {l.label}
@@ -51,7 +50,6 @@ export function Footer() {
             <p className="font-mono text-xs text-mist/30 uppercase tracking-widest mt-3">Entreprise</p>
             <nav className="flex flex-col gap-2.5">
               {[
-                { label: 'À propos', href: '#expertise' },
                 { label: 'Contact', href: '#contact' },
               ].map((l) => (
                 <a key={l.label} href={l.href} className="text-mist/40 text-sm hover:text-ivory transition-colors">
@@ -62,7 +60,18 @@ export function Footer() {
           </div>
 
           {/* Colonne 3 */}
+         
           <div className="flex flex-col gap-4">
+            <p className="font-mono text-xs text-mist/30 uppercase tracking-widest">Contact</p>
+            <nav className="flex flex-col gap-2.5">
+              {[
+                { label: 'Contact', href: '#contactform' },
+              ].map((l) => (
+                <a key={l.label} href={l.href} className="text-mist/40 text-sm hover:text-ivory transition-colors">
+                  {l.label}
+                </a>
+              ))}
+              <div className="flex flex-col gap-4">
             <p className="font-mono text-xs text-mist/30 uppercase tracking-widest">Contact</p>
             <a href="mailto:contact@optival.fr" className="text-mist/40 text-sm font-mono hover:text-ivory transition-colors">
               contact@optival.fr
@@ -76,11 +85,10 @@ export function Footer() {
               </a>
             </div>
           </div>
-        </div>
-
+          </div>
+   
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-mist/20 text-xs font-mono">© 2026 Optival. Tous droits réservés.</p>
-          <p className="text-mist/20 text-xs font-mono">Fait avec ☕ et Claude AI · France</p>
         </div>
       </div>
     </footer>
