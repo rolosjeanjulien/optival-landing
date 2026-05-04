@@ -4,7 +4,7 @@ import { ExternalLink, GitFork } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer className="bg-night dark-section text-ivory pt-16 pb-8 border-t border-white/5">
+    <div role="contentinfo" className="bg-night dark-section text-ivory pt-16 pb-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/5">
 
@@ -12,7 +12,7 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <span className="font-display font-semibold text-xl text-ivory">Optival</span>
             <p className="text-mist/50 text-sm leading-relaxed">
-              L'agence IA qui construit de vrais produits.
+              L&apos;agence IA qui construit de vrais produits.
             </p>
             <div className="flex items-center gap-4 mt-1">
               <a
@@ -48,11 +48,8 @@ export function Footer() {
                   {l.label}
                 </a>
               ))}
-          </div>
-
-          {/* Colonne 3 */}
-          <div className="flex flex-col gap-4">
-            <p className="font-mono text-xs text-mist/30 uppercase tracking-widest">Contact</p>
+            </nav>
+            <p className="font-mono text-xs text-mist/30 uppercase tracking-widest mt-3">Entreprise</p>
             <nav className="flex flex-col gap-2.5">
               {[
                 { label: 'Contact', href: '#contact' },
@@ -62,6 +59,13 @@ export function Footer() {
                 </a>
               ))}
             </nav>
+          </div>
+
+          {/* Colonne 3 */}
+          <div className="flex flex-col gap-4">
+            <p className="font-mono text-xs text-mist/30 uppercase tracking-widest">Contact</p>
+            <a href="mailto:contact@optival.fr" className="text-mist/40 text-sm font-mono hover:text-ivory transition-colors">
+              contact@optival.fr
             </a>
             <div className="flex flex-col gap-2 mt-3">
               <a href="/mentions-legales" className="text-mist/30 text-xs font-mono hover:text-mist transition-colors">
@@ -79,6 +83,6 @@ export function Footer() {
           <p className="text-mist/20 text-xs font-mono">© 2026 Optival. Tous droits réservés.</p>
         </div>
       </div>
-    </footer>
+    </div>
   )
 }
