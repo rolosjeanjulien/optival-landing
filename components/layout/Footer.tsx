@@ -1,3 +1,5 @@
+'use client'
+
 import { ExternalLink, GitFork } from 'lucide-react'
 
 export function Footer() {
