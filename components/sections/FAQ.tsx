@@ -39,16 +39,16 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="border-b border-ink/8 last:border-0">
+    <div className="border-b border-night/8 last:border-0">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between gap-4 py-5 text-left group"
         aria-expanded={open}
       >
-        <span className="font-semibold text-ink group-hover:text-accent transition-colors duration-150">
+        <span className="font-semibold text-night group-hover:text-sage-dark transition-colors duration-300">
           {q}
         </span>
-        <span className="shrink-0 w-6 h-6 rounded-full bg-ink/5 flex items-center justify-center text-accent group-hover:bg-accent/10 transition-colors duration-150">
+        <span className="shrink-0 w-6 h-6 rounded-full bg-night/5 flex items-center justify-center text-sage-dark group-hover:bg-sage-dark/10 transition-colors duration-300">
           {open ? <Minus size={13} /> : <Plus size={13} />}
         </span>
       </button>
@@ -62,7 +62,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
             transition={{ duration: 0.22, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-muted leading-relaxed">{a}</p>
+            <p className="pb-5 text-mist-dark leading-relaxed">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -72,7 +72,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export function FAQ() {
   return (
-    <section className="bg-surface py-24 px-4 sm:px-6 lg:px-8">
+    <section className="bg-linen py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -82,7 +82,7 @@ export function FAQ() {
           className="mb-12"
         >
           <p className="section-label mb-4">Questions fréquentes</p>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl text-ink leading-tight">
+          <h2 className="font-display font-semibold text-4xl sm:text-5xl text-night leading-tight">
             On répond à vos<br />vraies questions.
           </h2>
         </motion.div>
@@ -92,7 +92,7 @@ export function FAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.5 }}
-          className="bg-bg-surface border border-ink/8 rounded-card shadow-card px-6 sm:px-8"
+          className="bg-white border border-night/8 rounded-card shadow-card px-6 sm:px-8"
         >
           {faqs.map((faq) => (
             <FAQItem key={faq.q} q={faq.q} a={faq.a} />

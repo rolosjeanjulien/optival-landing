@@ -32,7 +32,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="bg-[#0F0E0D] grain-overlay py-24 px-4 sm:px-6 lg:px-8">
+    <section id="process" className="bg-night dark-section grain-overlay py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -44,20 +44,20 @@ export function Process() {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-6 h-px bg-accent" />
+            <div className="w-6 h-px bg-sage" />
             <span className="font-mono text-xs text-white/30 tracking-[0.2em] uppercase">
               Comment ça se passe
             </span>
           </div>
           <h2
-            className="font-display font-bold text-white max-w-2xl"
+            className="font-display font-semibold text-ivory max-w-2xl"
             style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.1 }}
           >
             Simple. Sans surprise.
             <br />
-            <span className="text-white/30">Sans jargon.</span>
+            <span className="text-mist/50">Sans jargon.</span>
           </h2>
-          <p className="mt-5 text-white/40 text-lg max-w-lg">
+          <p className="mt-5 text-mist text-lg max-w-lg">
             De votre premier appel à la mise en route — voici exactement ce qui se passe.
           </p>
         </motion.div>
@@ -77,32 +77,32 @@ export function Process() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.5, delay: i * 0.12 }}
-                  className="bg-[#0F0E0D] p-8 lg:p-10 flex flex-col gap-5 group"
+                  className="bg-night p-8 lg:p-10 flex flex-col gap-5 group"
                 >
                   {/* Numéro + icône */}
                   <div className="flex items-start justify-between">
-                    <div className="w-11 h-11 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/15 group-hover:border-accent/30 transition-colors duration-200">
-                      <Icon size={20} className="text-accent" />
+                    <div className="w-11 h-11 rounded-lg bg-sage/10 border border-sage/20 flex items-center justify-center group-hover:bg-sage/15 group-hover:border-sage/30 transition-colors duration-300">
+                      <Icon size={20} className="text-sage" />
                     </div>
                     <span className="font-mono text-2xl font-bold text-white/8 leading-none">{step.number}</span>
                   </div>
 
                   {/* Titre */}
                   <h3
-                    className="font-display font-bold text-white leading-snug"
+                    className="font-display font-semibold text-ivory leading-snug"
                     style={{ fontSize: 'clamp(1.1rem, 2vw, 1.35rem)' }}
                   >
                     {step.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-white/45 text-[15px] leading-relaxed flex-1">
+                  <p className="text-mist text-[15px] leading-relaxed flex-1">
                     {step.description}
                   </p>
 
                   {/* Détail */}
                   <div className="border-t border-white/8 pt-4">
-                    <p className="text-xs font-mono text-accent/50">
+                    <p className="text-xs font-mono text-sage/50">
                       {step.detail}
                     </p>
                   </div>
@@ -129,7 +129,7 @@ export function Process() {
             Demander mon audit gratuit
             <span className="btn-arrow">→</span>
           </a>
-          <p className="text-sm text-white/30">
+          <p className="text-sm text-mist/60">
             Aucun engagement · Réponse en moins de 24h
           </p>
         </motion.div>

@@ -38,10 +38,10 @@ export function ContactForm() {
   }
 
   const inputClass = (hasError: boolean) =>
-    `w-full bg-white/5 border ${hasError ? 'border-red-400' : 'border-white/10'} rounded-button px-4 py-3.5 text-white placeholder-white/25 text-sm font-mono focus:outline-none focus:border-accent transition-all`
+    `w-full bg-white/5 border ${hasError ? 'border-red-400' : 'border-white/10'} rounded-button px-4 py-3.5 text-ivory placeholder-white/25 text-sm font-mono focus:outline-none focus:border-sage transition-all`
 
   return (
-    <section id="contact" className="bg-[#0F0E0D] grain-overlay py-24 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="bg-night dark-section grain-overlay py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-16 items-start">
@@ -55,16 +55,16 @@ export function ContactForm() {
             className="flex flex-col gap-6"
           >
             <div className="flex items-center gap-3">
-              <div className="w-6 h-px bg-accent" />
+              <div className="w-6 h-px bg-sage" />
               <span className="font-mono text-xs text-white/30 tracking-[0.2em] uppercase">
                 Contact
               </span>
             </div>
-            <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
+            <h2 className="font-display font-semibold text-4xl sm:text-5xl lg:text-6xl text-ivory leading-tight">
               Parlons de
               <br />votre situation.
             </h2>
-            <p className="text-white/40 text-lg max-w-sm">
+            <p className="text-mist text-lg max-w-sm">
               Un audit gratuit de 30 min. On identifie ce qu'on peut automatiser et ce que ça vous coûte. Sans engagement.
             </p>
 
@@ -73,7 +73,7 @@ export function ContactForm() {
               href="https://calendly.com/optival/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-accent text-white font-semibold px-6 py-4 rounded-button hover:bg-accent/90 transition-colors group self-start"
+              className="inline-flex items-center gap-3 bg-sage text-night font-semibold px-6 py-4 rounded-button hover:bg-sage/90 transition-colors group self-start"
             >
               <CalendarDays size={18} />
               Demander mon audit gratuit
@@ -87,7 +87,7 @@ export function ContactForm() {
             </div>
 
             <div className="pt-0 border-t border-white/8">
-              <a href="mailto:contact@optival.fr" className="text-white/40 text-sm font-mono hover:text-white/70 transition-colors">
+              <a href="mailto:contact@optival.fr" className="text-mist/60 text-sm font-mono hover:text-mist transition-colors">
                 contact@optival.fr
               </a>
             </div>
@@ -110,9 +110,9 @@ export function ContactForm() {
                   className="border border-white/10 rounded-[12px] p-12 text-center flex flex-col items-center gap-4"
                 >
                   <CheckCircle2 size={40} className="text-[#16A34A]" />
-                  <h3 className="font-display text-white text-2xl font-bold">Message bien reçu !</h3>
-                  <p className="text-white/40">Nous reviendrons vers vous sous 24h.</p>
-                  <p className="text-white/25 text-sm font-mono">contact@optival.fr</p>
+                  <h3 className="font-display text-ivory text-2xl font-semibold">Message bien reçu !</h3>
+                  <p className="text-mist">Nous reviendrons vers vous sous 24h.</p>
+                  <p className="text-mist/50 text-sm font-mono">contact@optival.fr</p>
                 </motion.div>
               ) : (
                 <motion.form
@@ -147,9 +147,9 @@ export function ContactForm() {
                       className={`${inputClass(!!errors.need)} appearance-none`}
                       defaultValue=""
                     >
-                      <option value="" disabled className="bg-[#0F0E0D]">Votre besoin principal *</option>
+                      <option value="" disabled className="bg-[#0E1B2C]">Votre besoin principal *</option>
                       {needOptions.map((o) => (
-                        <option key={o.value} value={o.value} className="bg-[#0F0E0D]">{o.label}</option>
+                        <option key={o.value} value={o.value} className="bg-[#0E1B2C]">{o.label}</option>
                       ))}
                     </select>
                     {errors.need && <p className="mt-1 text-xs text-red-400 font-mono">{errors.need.message}</p>}

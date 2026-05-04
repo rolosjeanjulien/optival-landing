@@ -15,7 +15,7 @@ const config: Config = {
         night:       '#0E1B2C', // Bleu Nuit — fond sombre principal & texte clair
         'slate-deep': '#162638', // Ardoise Profonde — surface élevée sombre
         linen:       '#FAF7F1', // Lin — fond clair principal
-        white:       '#FFFFFF', // Blanc Pur — surface élevée claire
+        ivory:       '#F4EFE6', // Ivoire Chaud — texte principal fond sombre
 
         // Accents sauge
         sage:        '#8FBFA9', // Sauge Lumineuse — accent sur fond sombre

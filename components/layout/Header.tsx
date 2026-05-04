@@ -24,9 +24,9 @@ export function Header() {
     <motion.header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-200"
       animate={{
-        backgroundColor: scrolled ? 'rgba(250,250,248,0.95)' : 'transparent',
+        backgroundColor: scrolled ? 'rgba(250,247,241,0.95)' : 'transparent',
         backdropFilter: scrolled ? 'blur(12px)' : 'blur(0px)',
-        borderBottom: scrolled ? '1px solid rgba(17,17,16,0.08)' : '1px solid transparent',
+        borderBottom: scrolled ? '1px solid rgba(14,27,44,0.08)' : '1px solid transparent',
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,8 +34,8 @@ export function Header() {
 
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
-            <span className={`font-display font-bold text-xl transition-colors duration-200 ${
-              scrolled ? 'text-ink' : 'text-white'
+            <span className={`font-display font-semibold text-xl transition-colors duration-200 ${
+              scrolled ? 'text-night' : 'text-ivory'
             }`}>
               Optival
             </span>
@@ -47,8 +47,10 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-accent ${
-                  scrolled ? 'text-ink/60' : 'text-white/60'
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  scrolled
+                    ? 'text-night/60 hover:text-sage-dark'
+                    : 'text-white/60 hover:text-sage'
                 }`}
               >
                 {link.label}
@@ -56,14 +58,14 @@ export function Header() {
             ))}
           </nav>
 
-          {/* CTA — style craft */}
+          {/* CTA */}
           <div className="hidden lg:block">
             <a
               href="#contact"
               className={`inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-button transition-all group ${
                 scrolled
-                  ? 'bg-ink text-white hover:bg-ink/80'
-                  : 'bg-white text-ink hover:bg-white/90'
+                  ? 'bg-night text-ivory hover:bg-night/80'
+                  : 'bg-white text-night hover:bg-white/90'
               }`}
             >
               Demander mon audit gratuit
@@ -78,9 +80,9 @@ export function Header() {
             aria-label="Menu"
           >
             {mobileOpen ? (
-              <X className={scrolled ? 'text-ink' : 'text-white'} size={22} />
+              <X className={scrolled ? 'text-night' : 'text-white'} size={22} />
             ) : (
-              <Menu className={scrolled ? 'text-ink' : 'text-white'} size={22} />
+              <Menu className={scrolled ? 'text-night' : 'text-white'} size={22} />
             )}
           </button>
         </div>
@@ -94,22 +96,22 @@ export function Header() {
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed inset-0 bg-bg-surface z-[60] flex flex-col p-8 gap-6 lg:hidden"
+            className="fixed inset-0 bg-linen z-[60] flex flex-col p-8 gap-6 lg:hidden"
           >
             <div className="flex justify-between items-center">
-              <span className="font-display font-bold text-xl text-ink">Optival</span>
+              <span className="font-display font-semibold text-xl text-night">Optival</span>
               <button onClick={() => setMobileOpen(false)} aria-label="Fermer">
-                <X size={22} className="text-ink" />
+                <X size={22} className="text-night" />
               </button>
             </div>
-            <div className="w-full h-px bg-ink/8" />
+            <div className="w-full h-px bg-night/8" />
             <nav className="flex flex-col gap-6 mt-4">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="font-display text-3xl font-bold text-ink hover:text-accent transition-colors"
+                  className="font-display text-3xl font-semibold text-night hover:text-sage-dark transition-colors"
                 >
                   {link.label}
                 </a>

@@ -86,7 +86,7 @@ export function Services() {
   }, [reducedMotion])
 
   return (
-    <section id="services" className="bg-surface py-24 px-4 sm:px-6 lg:px-8">
+    <section id="services" className="bg-linen py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -98,10 +98,10 @@ export function Services() {
           className="mb-12"
         >
           <p className="section-label mb-4">Ce qu'on fait pour vous</p>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink leading-tight max-w-3xl">
+          <h2 className="font-display font-semibold text-4xl sm:text-5xl lg:text-6xl text-night leading-tight max-w-3xl">
             Votre site web. Vos tâches<br />qui se répètent. Vos avis Google.
           </h2>
-          <p className="mt-5 text-muted text-lg max-w-xl">
+          <p className="mt-5 text-mist-dark text-lg max-w-xl">
             Trois services concrets. Des résultats mesurables. Zéro jargon.
           </p>
         </motion.div>
@@ -112,21 +112,21 @@ export function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-ink/8 border border-ink/8 rounded-[12px] overflow-hidden mb-12"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-night/8 border border-night/8 rounded-[12px] overflow-hidden mb-12"
         >
-          {metrics.map(({ value, label }, i) => (
+          {metrics.map(({ value, label }) => (
             <div
               key={label}
-              className="bg-bg-surface px-6 py-5 flex flex-col gap-1"
+              className="bg-white px-6 py-5 flex flex-col gap-1"
             >
-              <span className="font-display font-bold text-2xl text-ink leading-none">{value}</span>
-              <span className="text-muted text-xs font-mono">{label}</span>
+              <span className="font-display font-semibold text-2xl text-night leading-none">{value}</span>
+              <span className="text-mist-dark text-xs font-mono">{label}</span>
             </div>
           ))}
         </motion.div>
 
         {/* ─── Grille 3 panneaux ─── */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-ink/8 border border-ink/8 rounded-[16px] overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-night/8 border border-night/8 rounded-[16px] overflow-hidden">
 
           {/* Panel 1 — Sites web */}
           <motion.div
@@ -134,20 +134,20 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
-            className="bg-bg-surface p-8 lg:p-10 flex flex-col gap-6 group hover:bg-surface transition-colors duration-200"
+            className="bg-white p-8 lg:p-10 flex flex-col gap-6 group hover:bg-sage-pale transition-colors duration-300"
           >
             <div className="flex items-start justify-between">
-              <div className="w-10 h-10 bg-ink/5 rounded-lg flex items-center justify-center group-hover:bg-ink/8 transition-colors duration-200">
-                <Search size={20} className="text-ink/60" />
+              <div className="w-10 h-10 bg-night/5 rounded-lg flex items-center justify-center group-hover:bg-night/8 transition-colors duration-300">
+                <Search size={20} className="text-night/60" />
               </div>
-              <span className="font-mono text-xs text-muted/50">01</span>
+              <span className="font-mono text-xs text-mist-dark/50">01</span>
             </div>
 
             <div>
-              <h3 className="font-display text-2xl font-bold text-ink leading-tight mb-3">
+              <h3 className="font-display text-2xl font-semibold text-night leading-tight mb-3">
                 Un site qui travaille.<br />Livré en 3 semaines.
               </h3>
-              <p className="text-muted leading-relaxed text-[15px]">
+              <p className="text-mist-dark leading-relaxed text-[15px]">
                 On crée ou refait votre site — beau, rapide, et qui apparaît sur Google.
                 SEO natif. Maintenance incluse. Vous n'avez rien à gérer ensuite.
               </p>
@@ -159,8 +159,8 @@ export function Services() {
                 { icon: Search, text: 'SEO natif dès le départ' },
                 { icon: Wrench, text: 'Maintenance incluse' },
               ].map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-center gap-2.5 text-sm text-ink/70">
-                  <Icon size={13} className="text-accent shrink-0" />
+                <li key={text} className="flex items-center gap-2.5 text-sm text-night/70">
+                  <Icon size={13} className="text-sage-dark shrink-0" />
                   {text}
                 </li>
               ))}
@@ -177,28 +177,28 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-[#0F0E0D] p-8 lg:p-10 flex flex-col gap-6 relative"
+            className="bg-night p-8 lg:p-10 flex flex-col gap-6 relative dark-section"
           >
             {/* Badge featured */}
             <div className="absolute top-4 right-4">
-              <span className="inline-flex items-center gap-1 bg-accent/15 text-accent text-[10px] font-mono font-semibold px-2 py-1 rounded-full">
+              <span className="inline-flex items-center gap-1 bg-sage/15 text-sage text-[10px] font-mono font-semibold px-2 py-1 rounded-full">
                 <Zap size={9} />
                 Populaire
               </span>
             </div>
 
             <div className="flex items-start justify-between">
-              <div className="w-10 h-10 bg-accent/15 rounded-lg flex items-center justify-center">
-                <Zap size={20} className="text-accent" />
+              <div className="w-10 h-10 bg-sage/15 rounded-lg flex items-center justify-center">
+                <Zap size={20} className="text-sage" />
               </div>
               <span className="font-mono text-xs text-white/20">02</span>
             </div>
 
             <div>
-              <h3 className="font-display text-2xl font-bold text-white leading-tight mb-3">
+              <h3 className="font-display text-2xl font-semibold text-ivory leading-tight mb-3">
                 Vos tâches répétitives ?<br />On les supprime.
               </h3>
-              <p className="text-white/45 leading-relaxed text-[15px]">
+              <p className="text-mist leading-relaxed text-[15px]">
                 Relances clients, rapports, emails, réseaux sociaux...
                 On identifie ce qui peut être automatisé et on le met en place.
               </p>
@@ -216,16 +216,16 @@ export function Services() {
                 <motion.span
                   key={label}
                   variants={pillItem}
-                  className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1 text-xs font-mono text-white/50"
+                  className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1 text-xs font-mono text-mist/70"
                 >
-                  <Icon size={11} className="text-accent" />
+                  <Icon size={11} className="text-sage" />
                   {label}
                 </motion.span>
               ))}
             </motion.div>
 
-            <div className="border-l-2 border-accent pl-4 py-1 mt-auto">
-              <p className="text-sm font-semibold text-white">
+            <div className="border-l-2 border-sage pl-4 py-1 mt-auto">
+              <p className="text-sm font-semibold text-ivory">
                 → 4 à 8h récupérées par semaine
               </p>
             </div>
@@ -242,27 +242,27 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-bg-surface p-8 lg:p-10 flex flex-col gap-6 group hover:bg-surface transition-colors duration-200"
+            className="bg-white p-8 lg:p-10 flex flex-col gap-6 group hover:bg-sage-pale transition-colors duration-300"
           >
             <div className="flex items-start justify-between">
-              <div className="w-10 h-10 bg-accent/8 rounded-lg flex items-center justify-center group-hover:bg-accent/12 transition-colors duration-200">
-                <Star size={20} className="text-accent" />
+              <div className="w-10 h-10 bg-sage-dark/8 rounded-lg flex items-center justify-center group-hover:bg-sage-dark/15 transition-colors duration-300">
+                <Star size={20} className="text-sage-dark" />
               </div>
-              <span className="font-mono text-xs text-muted/50">03</span>
+              <span className="font-mono text-xs text-mist-dark/50">03</span>
             </div>
 
             <div>
-              <h3 className="font-display text-2xl font-bold text-ink leading-tight mb-3">
+              <h3 className="font-display text-2xl font-semibold text-night leading-tight mb-3">
                 Vos avis Google répondus automatiquement.
               </h3>
-              <p className="text-muted leading-relaxed text-[15px]">
+              <p className="text-mist-dark leading-relaxed text-[15px]">
                 Autoreply répond à chaque avis en quelques minutes.
                 Vous gardez la main. +0,5 point de note en 60 jours.
               </p>
             </div>
 
             {/* Mini démo Autoreply */}
-            <div className="bg-[#1A1918] border border-ink/10 rounded-[10px] p-4 flex-1">
+            <div className="bg-slate-deep border border-night/10 rounded-[10px] p-4 flex-1">
               <div className="flex items-center gap-1.5 mb-3">
                 <div className="w-2 h-2 rounded-full bg-white/10" />
                 <div className="w-2 h-2 rounded-full bg-white/10" />
@@ -289,13 +289,13 @@ export function Services() {
                   <motion.div
                     initial={{ opacity: 0, y: 4 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg border border-accent/20 bg-accent/5"
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg border border-sage/20 bg-sage/5"
                   >
-                    <span className="font-mono text-[10px] text-accent">Réflexion en cours</span>
+                    <span className="font-mono text-[10px] text-sage">Réflexion en cours</span>
                     <div className="flex gap-1">
-                      <div className="w-1 h-1 rounded-full bg-accent dot-pulse-1" />
-                      <div className="w-1 h-1 rounded-full bg-accent dot-pulse-2" />
-                      <div className="w-1 h-1 rounded-full bg-accent dot-pulse-3" />
+                      <div className="w-1 h-1 rounded-full bg-sage dot-pulse-1" />
+                      <div className="w-1 h-1 rounded-full bg-sage dot-pulse-2" />
+                      <div className="w-1 h-1 rounded-full bg-sage dot-pulse-3" />
                     </div>
                   </motion.div>
                 )}
@@ -310,7 +310,7 @@ export function Services() {
                     <p className="text-white/70 text-xs leading-relaxed">
                       {typedText}
                       {demoState === 'typing' && (
-                        <span className="cursor-blink text-accent">|</span>
+                        <span className="cursor-blink text-sage">|</span>
                       )}
                     </p>
                   </motion.div>
@@ -323,7 +323,7 @@ export function Services() {
                     className={`w-full text-xs font-semibold rounded-lg py-2 transition-colors font-mono ${
                       demoState === 'published'
                         ? 'bg-[#16A34A] text-white'
-                        : 'bg-accent text-white hover:bg-accent-dark'
+                        : 'bg-sage text-night hover:bg-sage/90'
                     }`}
                   >
                     {demoState === 'published'
@@ -352,7 +352,7 @@ export function Services() {
           <a href="#contact" className="btn-primary-light btn-lg group">
             Demander mon audit gratuit <span className="btn-arrow">→</span>
           </a>
-          <p className="text-sm text-muted">
+          <p className="text-sm text-mist-dark">
             À partir de 490 €/mois · Sans engagement · Devis en 48h
           </p>
         </motion.div>
