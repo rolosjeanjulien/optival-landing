@@ -7,7 +7,7 @@ const steps = [
   {
     number: '01',
     icon: Phone,
-    title: 'Un appel de 30 min — offert',
+    title: 'Un premier appel sous 3 jours',
     description:
       'Vous nous expliquez votre quotidien en quelques mots. Pas besoin de préparer quoi que ce soit. On pose des questions simples.',
     detail: 'Aucune technique. Aucun engagement. En français, avec un interlocuteur français.',
@@ -18,15 +18,15 @@ const steps = [
     title: 'On vous dit exactement ce qu\'on peut faire',
     description:
       'En 48h, vous recevez une proposition claire : ce qu\'on automatise, ce que ça vous coûte, et combien de temps vous allez récupérer chaque semaine.',
-    detail: 'Devis détaillé · Facture française · TVA incluse.',
+    detail: 'Retour sur investissement analysé. Rapport et Devis détaillé.',
   },
   {
     number: '03',
     icon: Rocket,
-    title: 'Automatisation complète. Vous n\'y touchez plus.',
+    title: 'On personalise et implémente vos automatisations. Vous n\'y touchez plus.',
     description:
       'On installe, on configure, on teste. Vous n\'avez rien à apprendre ni à gérer. C\'est en route, et ça tourne tout seul.',
-    detail: 'Support inclus · Données hébergées en Europe · Conforme RGPD.',
+    detail: 'Support inclus',
   },
 ]
 
@@ -46,7 +46,7 @@ export function Process() {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-6 h-px bg-accent" />
             <span className="font-mono text-xs text-white/30 tracking-[0.2em] uppercase">
-              Comment ça se passe
+              Comment ça se passe ?
             </span>
           </div>
           <h2
@@ -58,7 +58,7 @@ export function Process() {
             <span className="text-white/30">Sans jargon.</span>
           </h2>
           <p className="mt-5 text-white/40 text-lg max-w-lg">
-            De votre premier appel à la mise en route — voici exactement ce qui se passe.
+            De votre premier appel à la mise en place, voici exactement ce qui se passe.
           </p>
         </motion.div>
 
@@ -126,11 +126,11 @@ export function Process() {
             rel="noopener noreferrer"
             className="btn-primary btn-lg group"
           >
-            Demander mon audit gratuit
+            Demander mon audit personalisé
             <span className="btn-arrow">→</span>
           </a>
           <p className="text-sm text-white/30">
-            Aucun engagement · Réponse en moins de 24h
+            Aucun engagement · Réponse en moins de 72h
           </p>
         </motion.div>
 
