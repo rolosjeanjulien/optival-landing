@@ -68,7 +68,7 @@ export function Header() {
                   : 'bg-white text-night hover:bg-white/90'
               }`}
             >
-              Demander mon audit gratuit
+              Demander mon audit personalisé
               <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
             </a>
           </div>
