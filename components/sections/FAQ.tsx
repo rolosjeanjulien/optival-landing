@@ -7,17 +7,13 @@ import { Plus, Minus } from 'lucide-react'
 const faqs = [
   {
     q: 'Est-ce que je dois avoir des compétences techniques ?',
-    a: "Non. Notre rôle est précisément de gérer toute la complexité technique à votre place. Pour Autoreply, la mise en place est réalisée par nos soins. Pour les automatisations, on vous explique ce qu'on fait, pas comment le refaire. Vous avez juste à valider les résultats.",
+    a: "Non. Notre rôle est précisément de gérer toute la complexité technique à votre place. La mise en place est réalisée par nos soins. Pour les automatisations, on vous explique ce qu'on fait, pas comment le refaire. Vous avez juste à valider les résultats.",
   },
   {
     q: "Combien de temps avant d'avoir des résultats ?",
-    a: "Pour Autoreply : opérationnel en moins de 72h. Pour les automatisations : les premiers processus automatisés sont livrés dans les 2 premières semaines.",
+    a: "Le premier rendez-vous est garantie sous 72h. Un rapport personalisée et des propositions d'optimisation à haut retour sur investissement sont ensuite partagé.",
   },
-  {
-    q: "Et si l'outil génère une mauvaise réponse sur Google ?",
-    a: "Vous choisissez le mode de publication qui vous convient. Un mode semi-Auto est disponible: chaque réponse complexe vous est soumise par email. Vous répondez simplement \"OUI\" ou \"NON\". Aucune réponse n'est publiée sans votre accord si vous ne le souhaitez pas.",
-  },
-  {
+   {
     q: 'Quels types de PME travaillez-vous avec ?',
     a: "Restaurants, commerces de proximité, artisans, agences B2B, professions libérales, immobilier. Toute structure avec des processus répétitifs à optimiser ou une présence digitale à construire peut bénéficier de notre accompagnement.",
   },
@@ -25,15 +21,19 @@ const faqs = [
     q: "Vous êtes une agence ou un freelance ?",
     a: "Ni l'un ni l'autre au sens classique. Optival est une structure fondée par un expert technique indépendant. L'avantage: vous avez toujours le même interlocuteur, celui qui comprend votre projet et qui l'exécute.",
   },
+   {
+    q: "Et si l'outil Autoreply génère une mauvaise réponse sur Google ?",
+    a: "Vous choisissez le mode de publication qui vous convient. Un mode semi-Auto est disponible: chaque réponse complexe vous est soumise pour validation par email. Aucune réponse n'est publiée sans votre accord si vous ne le souhaitez pas.",
+  },
+  {
+    q: "Mes clients préfère avoir un contact humain, il ne vont pas appécrier les réponses proposés par Autoreply !",
+    a: "L'outil sera paramétré selon un ton et une formulation qui vous ressemble. Il vous correspondra donc à 100%.",
+  },
   {
     q: "Quel est le coût d'Autoreply ?",
     a: "La grille tarifaire est disponible sur demande. Elle est indexée sur votre volume d'avis mensuel. Contactez-nous pour un devis personnalisé.",
-  },
-  {
-    q: "Où sont hébergées mes données ?",
-    a: "En Europe. Nous utilisons des hébergeurs conformes au RGPD. Vos données clients (avis, contacts, emails) ne sont jamais revendues ni utilisées pour entraîner des modèles IA. Nous sommes une entreprise française soumise au droit français.",
-  },
-]
+  }
+  ]
 
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
