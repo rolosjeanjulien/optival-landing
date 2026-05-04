@@ -340,23 +340,6 @@ export function Services() {
           </motion.div>
 
         </div>
-
-        {/* CTA section */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          className="flex flex-col sm:flex-row items-center gap-4 mt-12"
-        >
-          <a href="#contact" className="btn-primary-light btn-lg group">
-            Demander mon audit personalisé <span className="btn-arrow">→</span>
-          </a>
-          <p className="text-sm text-mist-dark">
-            Sans engagement - Premier échange en 72h
-          </p>
-        </motion.div>
-
       </div>
     </section>
   )
