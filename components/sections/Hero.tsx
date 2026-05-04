@@ -115,25 +115,6 @@ export function Hero() {
               </a>
             </motion.div>
 
-            {/* Métriques clés */}
-            <motion.div
-              initial={reducedMotion ? false : { opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.5 }}
-              className="grid grid-cols-3 gap-4 pt-2 border-t border-white/8"
-            >
-              {[
-                { value: '72h', label: 'Mise en route' },
-                { value: '4–8h', label: 'Récupérées / sem.' },
-                { value: '+0,5 pt', label: 'Google en 60 j.' },
-              ].map(({ value, label }) => (
-                <div key={label} className="flex flex-col gap-0.5">
-                  <span className="font-display font-semibold text-ivory text-xl leading-none">{value}</span>
-                  <span className="text-mist text-xs font-mono">{label}</span>
-                </div>
-              ))}
-            </motion.div>
-
             {/* Garanties */}
             <motion.div
               initial={reducedMotion ? false : { opacity: 0 }}
@@ -142,6 +123,7 @@ export function Hero() {
               className="flex flex-wrap gap-x-6 gap-y-2"
             >
               {[
+                'Sans jargon technique',
                 'Sans engagement',
                 'Entreprise française',
               ].map((item) => (
