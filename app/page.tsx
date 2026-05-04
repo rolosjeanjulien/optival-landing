@@ -14,7 +14,7 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <Automations />
+        {/* <Automations /> */}
         <Process />
         <FAQ />
         <ContactForm />
