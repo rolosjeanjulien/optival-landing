@@ -123,7 +123,7 @@ export function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="btn-primary-light btn-lg group w-full justify-center"
               >
-                Demander mon audit gratuit <span className="btn-arrow">→</span>
+                Demander mon audit personalisé <span className="btn-arrow">→</span>
               </a>
             </div>
           </motion.div>
