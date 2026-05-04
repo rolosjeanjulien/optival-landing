@@ -40,9 +40,9 @@ function delay(ms: number) {
 
 const metrics = [
   { value: '72h', label: 'Mise en route' },
-  { value: '4–8h', label: 'Récupérées / semaine' },
+  { value: '4–8h', label: 'Gagnées / semaine' },
   { value: '+0,5 pt', label: 'Note Google en 60 j.' },
-  { value: '+30%', label: 'Conversion devis' },
+  { value: '+20%', label: 'Conversion devis' },
 ]
 
 export function Services() {
@@ -97,12 +97,12 @@ export function Services() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <p className="section-label mb-4">Ce qu'on fait pour vous</p>
+          <p className="section-label mb-4">Ce qu'on peut faire pour vous</p>
           <h2 className="font-display font-semibold text-4xl sm:text-5xl lg:text-6xl text-night leading-tight max-w-3xl">
             Votre site web. Vos tâches<br />qui se répètent. Vos avis Google.
           </h2>
           <p className="mt-5 text-mist-dark text-lg max-w-xl">
-            Trois services concrets. Des résultats mesurables. Zéro jargon.
+            Des services concrets, adaptés à vos besoins. Des résultats mesurables. Zéro jargon.
           </p>
         </motion.div>
 
@@ -148,8 +148,8 @@ export function Services() {
                 Un site qui travaille.<br />Livré en 3 semaines.
               </h3>
               <p className="text-mist-dark leading-relaxed text-[15px]">
-                On crée ou refait votre site — beau, rapide, et qui apparaît sur Google.
-                SEO natif. Maintenance incluse. Vous n'avez rien à gérer ensuite.
+                On crée ou refait votre site: beau, rapide, et qui apparaît en tête sur Google.
+                SEO natif. Maintenance incluse. Vous n'avez rien à gérer.
               </p>
             </div>
 
@@ -199,7 +199,7 @@ export function Services() {
                 Vos tâches répétitives ?<br />On les supprime.
               </h3>
               <p className="text-mist leading-relaxed text-[15px]">
-                Relances clients, rapports, emails, réseaux sociaux...
+                Relances clients, devis, rapports, emails, réseaux sociaux...
                 On identifie ce qui peut être automatisé et on le met en place.
               </p>
             </div>
@@ -231,7 +231,7 @@ export function Services() {
             </div>
 
             <a href="#contact" className="btn-primary btn-sm group self-start">
-              Audit gratuit <span className="btn-arrow">→</span>
+              Audit personalisée <span className="btn-arrow">→</span>
             </a>
           </motion.div>
 
@@ -256,8 +256,8 @@ export function Services() {
                 Vos avis Google répondus automatiquement.
               </h3>
               <p className="text-mist-dark leading-relaxed text-[15px]">
-                Autoreply répond à chaque avis en quelques minutes.
-                Vous gardez la main. +0,5 point de note en 60 jours.
+                Notre outil Autoreply répond à chaque avis en quelques minutes.
+                Selon vos préférence. +0,5 point de note en 60 jours.
               </p>
             </div>
 
@@ -350,10 +350,10 @@ export function Services() {
           className="flex flex-col sm:flex-row items-center gap-4 mt-12"
         >
           <a href="#contact" className="btn-primary-light btn-lg group">
-            Demander mon audit gratuit <span className="btn-arrow">→</span>
+            Demander mon audit personalisé <span className="btn-arrow">→</span>
           </a>
           <p className="text-sm text-mist-dark">
-            À partir de 490 €/mois · Sans engagement · Devis en 48h
+            Sans engagement - Premier échange en 72h
           </p>
         </motion.div>
 

@@ -64,7 +64,7 @@ export function Hero() {
             >
               <div className="w-6 h-px bg-sage" />
               <span className="font-mono text-xs text-white/40 tracking-[0.2em] uppercase">
-                Automatisation · Optimisation
+                Automatisation et Optimisation
               </span>
             </motion.div>
 
@@ -94,8 +94,8 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 1.1 }}
               className="text-mist text-lg leading-relaxed max-w-lg"
             >
-              Répondre aux avis Google, envoyer des relances, tenir votre site à jour...
-              Ce sont 4 à 8 heures perdues chaque semaine. On vous les rend.
+              Répondre aux avis Google, envoyer des relances, générer des devis...
+              Ce sont des heures perdues chaque semaine. On vous les rend.
             </motion.p>
 
             {/* CTAs */}
@@ -106,7 +106,7 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-3 pt-2"
             >
               <a href="#contact" className="btn-primary btn-lg group">
-                Demander mon audit gratuit
+                Demander mon audit
                 <span className="btn-arrow">→</span>
               </a>
               <a href="#process" className="btn-ghost btn-lg group">
@@ -143,7 +143,7 @@ export function Hero() {
             >
               {[
                 'Sans engagement',
-                'Entreprise française · Données en Europe',
+                'Entreprise française',
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2 text-sm text-mist/60">
                   <CheckCircle size={13} className="text-sage shrink-0" />
