@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
+import { Inter, Fraunces, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { CustomCursor } from '@/components/layout/CustomCursor'
 import { GSAPProvider } from '@/components/providers/GSAPProvider'
@@ -10,11 +10,11 @@ const inter = Inter({
   display: 'swap',
 })
 
-const spaceGrotesk = Space_Grotesk({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-fraunces',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: ['500', '600'],
 })
 
 const jetbrainsMono = JetBrains_Mono({
@@ -58,8 +58,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
-      <body className="antialiased font-sans bg-bg-surface text-ink">
+    <html lang="fr" className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}>
+      <body className="antialiased font-sans bg-linen text-night">
         <GSAPProvider>
           <CustomCursor />
           {children}

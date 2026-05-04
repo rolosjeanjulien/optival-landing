@@ -3,20 +3,24 @@
 @tailwind utilities;
 
 @layer base {
+  /* ===========================
+     MODE CLAIR — « Lin lumineux »
+     Fond: Lin · Accent: Sauge Foncée · Texte: Bleu Nuit
+     =========================== */
   :root {
-    --background: #FAFAF8;
-    --foreground: #111110;
-    --accent: #E85D10;
-    --accent-dark: #C44D0C;
-    --bg-dark: #0F0E0D;
-    --surface: #F2F2F0;
-    --ink: #111110;
-    --muted: #78716C;
+    --background:   #FAF7F1;
+    --foreground:   #0E1B2C;
+    --surface:      #FFFFFF;
+    --accent:       #4A8A75;
+    --accent-soft:  #E8F0EB;
+    --gold:         #8B6F2E;
+    --muted:        #5A6B7E;
+    --border:       rgba(14, 27, 44, 0.08);
   }
 
   body {
-    background-color: #FAFAF8;
-    color: #111110;
+    background-color: #FAF7F1;
+    color: #0E1B2C;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -83,48 +87,48 @@
   gap: 0.5rem;
   font-weight: 600;
   border-radius: 10px;
-  transition: all 0.15s ease;
+  transition: all 0.4s ease-out;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
 }
 
-/* Bouton primaire — fond sombre */
+/* Bouton primaire — fond sombre (sauge sur nuit) */
 .btn-primary {
-  background-color: #E85D10;
-  color: #fff;
-  border: 1.5px solid #E85D10;
+  background-color: #8FBFA9;
+  color: #0E1B2C;
+  border: 1.5px solid #8FBFA9;
 }
-.btn-primary:hover { background-color: #C44D0C; border-color: #C44D0C; }
+.btn-primary:hover { background-color: #7aaf97; border-color: #7aaf97; }
 
 /* Bouton ghost — fond sombre */
 .btn-ghost {
   background-color: transparent;
-  color: #fff;
-  border: 1.5px solid rgba(255,255,255,0.3);
+  color: #F4EFE6;
+  border: 1.5px solid rgba(244, 239, 230, 0.30);
 }
-.btn-ghost:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.05); }
+.btn-ghost:hover { border-color: rgba(244, 239, 230, 0.70); background: rgba(244, 239, 230, 0.05); }
 
-/* Bouton primaire — fond clair */
+/* Bouton primaire — fond clair (bleu nuit sur lin) */
 .btn-primary-light {
-  background-color: #E85D10;
-  color: #fff;
-  border: 1.5px solid #E85D10;
+  background-color: #0E1B2C;
+  color: #F4EFE6;
+  border: 1.5px solid #0E1B2C;
 }
-.btn-primary-light:hover { background-color: #C44D0C; border-color: #C44D0C; }
+.btn-primary-light:hover { background-color: #162638; border-color: #162638; }
 
 /* Bouton outline — fond clair */
 .btn-outline-light {
   background-color: transparent;
-  color: #111110;
-  border: 1.5px solid rgba(17,17,16,0.2);
+  color: #0E1B2C;
+  border: 1.5px solid rgba(14, 27, 44, 0.20);
 }
-.btn-outline-light:hover { border-color: #111110; }
+.btn-outline-light:hover { border-color: #0E1B2C; }
 
 /* Arrow dans les boutons */
 .btn-arrow {
   display: inline-block;
-  transition: transform 0.2s ease;
+  transition: transform 0.4s ease-out;
 }
 .btn-primary:hover .btn-arrow,
 .btn-primary-light:hover .btn-arrow,
@@ -144,15 +148,31 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #78716C;
+  color: #5A6B7E;
 }
 
 /* Ligne décorative craft */
 .craft-rule {
   width: 3rem;
   height: 1px;
-  background-color: #E85D10;
+  background-color: #4A8A75;
   flex-shrink: 0;
+}
+
+/* Sur fond sombre, la règle utilise la sauge claire */
+.dark-section .craft-rule {
+  background-color: #8FBFA9;
+}
+
+/* Mention de réassurance (or) */
+.trust-badge {
+  color: #C9A86A;
+}
+.dark-section .trust-badge {
+  color: #C9A86A;
+}
+:not(.dark-section) .trust-badge {
+  color: #8B6F2E;
 }
 
 .animate-float {

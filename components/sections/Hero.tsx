@@ -35,18 +35,18 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="grain-overlay relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#0F0E0D]"
+      className="grain-overlay dark-section relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-night"
     >
       {/* Gradient blobs — profondeur atmosphérique */}
       {!reducedMotion && (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[-15%] left-[5%] w-[700px] h-[700px] rounded-full bg-accent/[0.07] blur-[130px] animate-gradient-move-1" />
-          <div className="absolute top-[25%] right-[-8%] w-[500px] h-[500px] rounded-full bg-accent/[0.05] blur-[110px] animate-gradient-move-2" />
+          <div className="absolute top-[-15%] left-[5%] w-[700px] h-[700px] rounded-full bg-sage/[0.07] blur-[130px] animate-gradient-move-1" />
+          <div className="absolute top-[25%] right-[-8%] w-[500px] h-[500px] rounded-full bg-sage/[0.05] blur-[110px] animate-gradient-move-2" />
           <div className="absolute bottom-[-10%] left-[35%] w-[450px] h-[450px] rounded-full bg-white/[0.025] blur-[90px] animate-gradient-move-3" />
         </div>
       )}
 
-      {/* Ligne décorative verticale — craft detail */}
+      {/* Ligne décorative verticale */}
       <div className="absolute left-0 top-0 bottom-0 w-px bg-white/5 hidden lg:block" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full pt-24 pb-16">
@@ -62,14 +62,14 @@ export function Hero() {
               transition={{ duration: 0.4 }}
               className="flex items-center gap-3"
             >
-              <div className="w-6 h-px bg-accent" />
+              <div className="w-6 h-px bg-sage" />
               <span className="font-mono text-xs text-white/40 tracking-[0.2em] uppercase">
                 Automatisation et Optimisation
               </span>
             </motion.div>
 
             {/* H1 — révélation mot par mot */}
-            <h1 className="font-display font-bold leading-[1.05] text-white"
+            <h1 className="font-display font-semibold leading-[1.05] text-ivory"
                 style={{ fontSize: 'clamp(3rem, 8vw, 6.5rem)' }}>
               {words.map((word, i) => (
                 <span
@@ -92,7 +92,7 @@ export function Hero() {
               initial={reducedMotion ? false : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1.1 }}
-              className="text-white/50 text-lg leading-relaxed max-w-lg"
+              className="text-mist text-lg leading-relaxed max-w-lg"
             >
               Répondre aux avis Google, envoyer des relances, générer des devis...
               Ce sont des heures perdues chaque semaine. On vous les rend.
@@ -128,8 +128,8 @@ export function Hero() {
                 { value: '+0,5 pt', label: 'Google en 60 j.' },
               ].map(({ value, label }) => (
                 <div key={label} className="flex flex-col gap-0.5">
-                  <span className="font-display font-bold text-white text-xl leading-none">{value}</span>
-                  <span className="text-white/30 text-xs font-mono">{label}</span>
+                  <span className="font-display font-semibold text-ivory text-xl leading-none">{value}</span>
+                  <span className="text-mist text-xs font-mono">{label}</span>
                 </div>
               ))}
             </motion.div>
@@ -145,8 +145,8 @@ export function Hero() {
                 'Sans engagement',
                 'Entreprise française',
               ].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-white/35">
-                  <CheckCircle size={13} className="text-accent shrink-0" />
+                <div key={item} className="flex items-center gap-2 text-sm text-mist/60">
+                  <CheckCircle size={13} className="text-sage shrink-0" />
                   <span>{item}</span>
                 </div>
               ))}
@@ -161,7 +161,7 @@ export function Hero() {
             className="hidden lg:block"
           >
             <div className="animate-float">
-              <div className="bg-[#1A1918] rounded-[12px] border border-white/10 p-5 w-full shadow-[0_0_60px_rgba(232,93,16,0.06)]">
+              <div className="bg-slate-deep rounded-[12px] border border-white/10 p-5 w-full shadow-[0_0_60px_rgba(143,191,169,0.08)]">
                 {/* Chrome bar */}
                 <div className="flex items-center gap-1.5 mb-4">
                   <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
@@ -198,12 +198,12 @@ export function Hero() {
                   </div>
 
                   {/* IA processing */}
-                  <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg border border-accent/20 bg-accent/5">
-                    <span className="text-accent text-xs font-mono">IA en cours</span>
+                  <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg border border-sage/20 bg-sage/5">
+                    <span className="text-sage text-xs font-mono">IA en cours</span>
                     <div className="flex gap-1">
-                      <div className="w-1 h-1 rounded-full bg-accent dot-pulse-1" />
-                      <div className="w-1 h-1 rounded-full bg-accent dot-pulse-2" />
-                      <div className="w-1 h-1 rounded-full bg-accent dot-pulse-3" />
+                      <div className="w-1 h-1 rounded-full bg-sage dot-pulse-1" />
+                      <div className="w-1 h-1 rounded-full bg-sage dot-pulse-2" />
+                      <div className="w-1 h-1 rounded-full bg-sage dot-pulse-3" />
                     </div>
                   </div>
 
@@ -212,7 +212,7 @@ export function Hero() {
                     <p className="text-white/30 text-xs font-mono mb-1.5">réponse générée</p>
                     <p className="text-white/70 text-sm leading-relaxed">
                       Merci pour votre retour ! Nous sommes ravis...
-                      <span className="cursor-blink text-accent ml-0.5">|</span>
+                      <span className="cursor-blink text-sage ml-0.5">|</span>
                     </p>
                   </div>
 
