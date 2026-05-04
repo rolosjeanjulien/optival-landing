@@ -48,8 +48,11 @@ export function Footer() {
                   {l.label}
                 </a>
               ))}
-            </nav>
-            <p className="font-mono text-xs text-mist/30 uppercase tracking-widest mt-3">Entreprise</p>
+          </div>
+
+          {/* Colonne 3 */}
+          <div className="flex flex-col gap-4">
+            <p className="font-mono text-xs text-mist/30 uppercase tracking-widest">Contact</p>
             <nav className="flex flex-col gap-2.5">
               {[
                 { label: 'Contact', href: '#contact' },
@@ -59,13 +62,6 @@ export function Footer() {
                 </a>
               ))}
             </nav>
-          </div>
-
-          {/* Colonne 3 */}
-          <div className="flex flex-col gap-4">
-            <p className="font-mono text-xs text-mist/30 uppercase tracking-widest">Contact</p>
-            <a href="mailto:contact@optival.fr" className="text-mist/40 text-sm font-mono hover:text-ivory transition-colors">
-              contact@optival.fr
             </a>
             <div className="flex flex-col gap-2 mt-3">
               <a href="/mentions-legales" className="text-mist/30 text-xs font-mono hover:text-mist transition-colors">
