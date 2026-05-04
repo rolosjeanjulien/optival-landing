@@ -26,8 +26,8 @@ const faqs = [
     a: "Vous choisissez le mode de publication qui vous convient. Un mode semi-Auto est disponible: chaque réponse complexe vous est soumise pour validation par email. Aucune réponse n'est publiée sans votre accord si vous ne le souhaitez pas.",
   },
   {
-    q: "Mes clients préfère avoir un contact humain, il ne vont pas appécrier les réponses proposés par Autoreply !",
-    a: "L'outil sera paramétré selon un ton et une formulation qui vous ressemble. Il vous correspondra donc à 100%.",
+    q: "Mes clients vont penser qu'il s'agit d'un robot ?",
+    a: "L'outil sera paramétré selon un ton et une formulation qui vous ressemble. Il s'adaptera pour vous correspondre à 100%.",
   },
   {
     q: "Quel est le coût d'Autoreply ?",
