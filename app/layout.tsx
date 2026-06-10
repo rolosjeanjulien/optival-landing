@@ -44,21 +44,24 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     url: 'https://optival.fr',
     siteName: 'Optival',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: "Optival — L'agence IA pour PME",
-      },
-    ],
   },
   robots: { index: true, follow: true },
 }
 
+const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        {plausibleDomain && (
+          <script
+            defer
+            data-domain={plausibleDomain}
+            src="https://plausible.io/js/script.outbound-links.js"
+          />
+        )}
+      </head>
       <body className="antialiased font-sans bg-linen text-night">
         <GSAPProvider>
           <CustomCursor />
