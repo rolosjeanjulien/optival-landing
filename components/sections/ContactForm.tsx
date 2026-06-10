@@ -65,7 +65,7 @@ export function ContactForm() {
               <br />votre situation.
             </h2>
             <p className="text-mist text-lg max-w-sm">
-              Un audit gratuit de 30 min. On identifie ce qu'on peut automatiser et ce que ça vous coûte. Sans engagement.
+              Un audit personalisé. On identifie ce qu'on peut automatiser et ce que ça vous coûte.
             </p>
 
             {/* Calendly — point d'entrée principal */}
@@ -76,7 +76,7 @@ export function ContactForm() {
               className="inline-flex items-center gap-3 bg-sage text-night font-semibold px-6 py-4 rounded-button hover:bg-sage/90 transition-colors group self-start"
             >
               <CalendarDays size={18} />
-              Demander mon audit gratuit
+              Demander mon audit personalisé
               <span className="group-hover:translate-x-0.5 transition-transform">→</span>
             </a>
 
@@ -182,7 +182,7 @@ export function ContactForm() {
 
                   <p className="text-white/20 text-xs font-mono flex items-center justify-center gap-1.5">
                     <Lock size={10} />
-                    Données confidentielles · Aucun spam ·{' '}
+                    Données confidentielles ·{' '}
                     <a href="/politique-de-confidentialite" className="hover:text-white/40 transition-colors underline">
                       RGPD
                     </a>

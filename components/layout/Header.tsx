@@ -6,7 +6,7 @@ import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { label: 'Services', href: '#services' },
-  { label: 'Process', href: '#process' },
+  { label: 'Fonctionnement', href: '#process' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -68,7 +68,7 @@ export function Header() {
                   : 'bg-white text-night hover:bg-white/90'
               }`}
             >
-              Demander mon audit gratuit
+              Demander mon audit personalisé
               <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
             </a>
           </div>
@@ -123,7 +123,7 @@ export function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="btn-primary-light btn-lg group w-full justify-center"
               >
-                Demander mon audit gratuit <span className="btn-arrow">→</span>
+                Demander mon audit personalisé <span className="btn-arrow">→</span>
               </a>
             </div>
           </motion.div>
